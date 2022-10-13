@@ -1,4 +1,4 @@
-import { formatPath } from "~/utils/formatPath";
+import { formatPath } from '~/utils/formatPath';
 
 export function getLocaleFromPath(path: string) {
   const getLocale = path.split('/')[1];

@@ -1,3 +1,4 @@
+/* eslint-disable */
 /*
  * WHAT IS THIS FILE?
  *

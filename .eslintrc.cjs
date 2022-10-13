@@ -6,8 +6,8 @@ module.exports = {
     node: true,
   },
   extends: [
-    'eslint:recommended',
-    'plugin:@typescript-eslint/recommended',
+    'airbnb-base',
+    'airbnb-typescript/base',
     'plugin:qwik/recommended',
   ],
   parser: '@typescript-eslint/parser',
@@ -36,5 +36,9 @@ module.exports = {
     'no-case-declarations': 'off',
     'no-console': 'off',
     '@typescript-eslint/no-unused-vars': ['error'],
+    'import/no-extraneous-dependencies': "off",
+    'import/extensions': "off",
+    'import/prefer-default-export': "off",
+    'func-names': "off",
   },
 };
