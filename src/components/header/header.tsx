@@ -8,7 +8,7 @@ export default component$(() => {
   useStylesScoped$(styles);
   const location = useLocation();
   const locale = getLocaleFromPath(location.pathname);
-  console.log('locale', locale);
+
   return (
     <header>
       <div class="logo">
