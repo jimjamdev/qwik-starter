@@ -1,10 +1,14 @@
 import { component$, useStylesScoped$ } from '@builder.io/qwik';
+import { Link, useLocation } from "@builder.io/qwik-city";
 import { QwikLogo } from '../icons/qwik';
 import styles from './header.css?inline';
+import { getLocaleFromPath } from "~/utils/getLocaleFromPath";
 
 export default component$(() => {
   useStylesScoped$(styles);
-
+  const location = useLocation();
+  const locale = getLocaleFromPath(location.pathname);
+  console.log('locale', locale);
   return (
     <header>
       <div class="logo">
@@ -14,9 +18,14 @@ export default component$(() => {
       </div>
       <ul>
         <li>
-          <a href="https://qwik.builder.io/docs/components/overview/" target="_blank">
-            Docs
-          </a>
+          <Link href={`/${locale}`}>
+            Home
+          </Link>
+        </li>
+        <li>
+          <Link href={`/${locale}/listing`}>
+            Listing
+          </Link>
         </li>
         <li>
           <a href="https://qwik.builder.io/examples/introduction/hello-world/" target="_blank">
