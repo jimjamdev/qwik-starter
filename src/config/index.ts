@@ -1,3 +1,5 @@
+import { locales } from "~/config/locales";
+
 export const config = {
-  defaultLocale: 'en',
+  ...locales
 }

@@ -1,6 +1,6 @@
 import { component$ } from '@builder.io/qwik';
 import { DocumentHead, useLocation } from "@builder.io/qwik-city";
-import { formatPath } from '~/utils/formatPath';
+import { formatPath } from '~/utils/routing/formatPath';
 
 export default component$(() => {
   const location = useLocation();
