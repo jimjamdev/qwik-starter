@@ -1,4 +1,4 @@
-export const locales = {
+export const localesConfig = {
   defaultLocale: 'en',
   locales: [
     'en',

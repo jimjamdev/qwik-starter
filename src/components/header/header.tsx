@@ -2,13 +2,16 @@ import { component$, useStylesScoped$ } from '@builder.io/qwik';
 import { Link, useLocation } from '@builder.io/qwik-city';
 import { QwikLogo } from '../icons/qwik';
 import styles from './header.css?inline';
-import { getLocaleFromPath } from '~/utils/routing';
 import { getBrowserLanguage } from "~/utils/client/getBrowserLanguage";
+import { getLocale } from "~/utils/routing/getLocale";
+import { config } from "~/config";
 
 export default component$(() => {
   useStylesScoped$(styles);
-  const location = useLocation();
-  const locale = getLocaleFromPath(location.pathname);
+  const locale = getLocale();
+  console.log('locale', locale);
+  const path = locale === config.defaultLocale ? '' : locale;
+  console.log('path', path);
   console.log('getBrowserLanguage', getBrowserLanguage());
 
   return (
@@ -20,12 +23,12 @@ export default component$(() => {
       </div>
       <ul>
         <li>
-          <Link href={`/${locale}`}>
+          <Link href={`/${path}`}>
             Home
           </Link>
         </li>
         <li>
-          <Link href={`/${locale}/listing`}>
+          <Link href={`${path}/listing`}>
             Listing
           </Link>
         </li>
