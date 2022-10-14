@@ -1,5 +1,5 @@
-import { locales } from "~/config/locales";
+import { locales } from '~/config/locales';
 
 export const config = {
-  ...locales
-}
+  ...locales,
+};
