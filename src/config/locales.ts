@@ -1,5 +1,6 @@
 export const localesConfig = {
   defaultLocale: 'en',
+  redirectToBrowserLocale: true,
   locales: [
     'en',
     'de',
