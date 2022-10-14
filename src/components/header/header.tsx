@@ -3,7 +3,7 @@ import { Link, useLocation } from '@builder.io/qwik-city';
 import { QwikLogo } from '../icons/qwik';
 import styles from './header.css?inline';
 import { getLocaleFromPath } from '~/utils/routing';
-import { getBrowserLanguage } from "~/utils/client/getBrowserLanguage";
+import { getBrowserLanguage } from '~/utils/client/getBrowserLanguage';
 
 export default component$(() => {
   useStylesScoped$(styles);
