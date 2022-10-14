@@ -1,15 +1,12 @@
 import { component$, Slot } from '@builder.io/qwik';
 import Header from '../components/header/header';
-import { LocaleProvider } from '~/context/locale';
 
 export default component$(() => (
     <>
       <main>
         <Header />
         <section>
-          <LocaleProvider>
           <Slot />
-          </LocaleProvider>
         </section>
       </main>
       <footer>

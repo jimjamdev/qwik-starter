@@ -3,6 +3,7 @@ import { QwikCity, RouterOutlet, ServiceWorkerRegister } from '@builder.io/qwik-
 import { RouterHead } from './components/router-head/router-head';
 
 import './global.css';
+import { LocaleProvider } from '~/context/locale';
 
 export default component$(() => (
   <QwikCity>
@@ -11,7 +12,9 @@ export default component$(() => (
         <RouterHead />
       </head>
       <body lang="en">
+      <LocaleProvider>
         <RouterOutlet />
+      </LocaleProvider>
         <ServiceWorkerRegister />
       </body>
     </QwikCity>
