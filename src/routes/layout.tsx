@@ -1,6 +1,6 @@
 import { component$, Slot } from '@builder.io/qwik';
 import Header from '../components/header/header';
-import { getLocale } from "~/utils/routing/getLocale";
+import { getLocale } from '~/utils/routing/getLocale';
 
 export default component$(() => {
   const locale = getLocale();
@@ -19,5 +19,5 @@ export default component$(() => {
         </a>
       </footer>
     </>
-  )
-}) ;
+  );
+});

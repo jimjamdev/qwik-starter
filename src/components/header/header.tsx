@@ -1,10 +1,10 @@
 import { component$, useStylesScoped$ } from '@builder.io/qwik';
-import { Link, useLocation } from '@builder.io/qwik-city';
+import { Link } from '@builder.io/qwik-city';
 import { QwikLogo } from '../icons/qwik';
 import styles from './header.css?inline';
-import { getBrowserLanguage } from "~/utils/client/getBrowserLanguage";
-import { getLocale } from "~/utils/routing/getLocale";
-import { config } from "~/config";
+import { getBrowserLanguage } from '~/utils/client/getBrowserLanguage';
+import { getLocale } from '~/utils/routing/getLocale';
+import { config } from '~/config';
 
 export default component$(() => {
   useStylesScoped$(styles);

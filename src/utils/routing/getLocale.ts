@@ -1,6 +1,6 @@
-import { useLocation } from "@builder.io/qwik-city";
-import { getLocaleFromPath } from "~/utils";
-import { config } from "~/config";
+import { useLocation } from '@builder.io/qwik-city';
+import { getLocaleFromPath } from '~/utils';
+import { config } from '~/config';
 
 export function getLocale() {
   const location = useLocation();

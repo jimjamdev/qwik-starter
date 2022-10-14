@@ -13,5 +13,5 @@ export const localesConfig = {
     'zh',
     'ko',
     'ar',
-  ]
-}
+  ],
+};

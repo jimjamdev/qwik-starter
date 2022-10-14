@@ -1,5 +1,5 @@
 import { formatPath } from '~/utils/routing/formatPath';
-import { config } from "~/config";
+import { config } from '~/config';
 
 export function getLocaleFromPath(path: string) {
   if (!path) return undefined;
