@@ -11,16 +11,18 @@ import { LocaleProvider } from '~/context/locale';
 
 export default component$(() => {
   useStylesScoped$(styles);
-  return (<QwikCity>
-    <head>
-      <meta charSet="utf-8" />
-      <RouterHead />
-    </head>
-    <body lang="en">
-    <LocaleProvider>
-      <RouterOutlet />
-    </LocaleProvider>
-    <ServiceWorkerRegister />
-    </body>
-  </QwikCity>);
+  return (
+    <QwikCity>
+      <head>
+        <meta charSet="utf-8" />
+        <RouterHead />
+      </head>
+      <body lang="en">
+        <LocaleProvider>
+          <RouterOutlet />
+        </LocaleProvider>
+        <ServiceWorkerRegister />
+      </body>
+    </QwikCity>
+  );
 });
