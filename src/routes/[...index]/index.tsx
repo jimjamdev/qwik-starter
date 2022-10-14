@@ -5,6 +5,7 @@ import { formatPath } from '~/utils/routing/formatPath';
 export default component$(() => {
   const location = useLocation();
   const path = formatPath(location.pathname);
+
   return (<div>locale route {path || 'en'}</div>);
 });
 
