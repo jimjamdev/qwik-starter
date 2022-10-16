@@ -1,15 +1,17 @@
-import Swiper, { Navigation, Pagination } from "swiper";
-import { component$, useClientEffect$, useSignal, useStylesScoped$ } from "@builder.io/qwik";
-import styles from "swiper/css/bundle?inline";
+import Swiper, { Navigation, Pagination } from 'swiper';
+import {
+  component$, useClientEffect$, useSignal, useStylesScoped$,
+} from '@builder.io/qwik';
+import styles from 'swiper/css/bundle?inline';
 
 export const Carousel = component$(({ slides, options }) => {
   useStylesScoped$(styles);
   const swiperRef = useSignal<HTMLDivElement>();
   // init Swiper:
   useClientEffect$(() => {
-    const swiper = new Swiper(".swiper", {
+    const swiper = new Swiper('.swiper', {
       options,
-      modules: [Navigation, Pagination]
+      modules: [Navigation, Pagination],
     });
     swiper.destroy();
   });

@@ -1,14 +1,14 @@
-import { component$, useStylesScoped$ } from "@builder.io/qwik";
-import { Link } from "@builder.io/qwik-city";
-import { QwikLogo } from "../icons/qwik";
-import styles from "./header.css?inline";
-import { getLocale } from "~/utils/routing/getLocale";
-import { config } from "~/config";
+import { component$, useStylesScoped$ } from '@builder.io/qwik';
+import { Link } from '@builder.io/qwik-city';
+import { QwikLogo } from '../icons/qwik';
+import styles from './header.css?inline';
+import { getLocale } from '~/utils/routing/getLocale';
+import { config } from '~/config';
 
 export default component$(() => {
   useStylesScoped$(styles);
   const locale = getLocale();
-  const path = locale === config.defaultLocale ? "" : locale;
+  const path = locale === config.defaultLocale ? '' : locale;
 
   return (
     <header>
