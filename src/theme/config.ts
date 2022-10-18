@@ -14,6 +14,9 @@ export const {
       gray400: 'gainsboro',
       gray500: 'lightgray',
     },
+    button: {
+      backgroundColor: 'green',
+    },
   },
   media: {
     bp1: '(min-width: 480px)',
