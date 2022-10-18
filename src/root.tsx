@@ -11,6 +11,8 @@ import { RouterHead } from './components/router-head/router-head';
 // import styles from './global.css?inline';
 import { LocaleProvider } from '~/context/locale';
 
+console.log('getCssText()', getCssText().toString());
+
 export default component$(() => (
     <QwikCity>
       <head>

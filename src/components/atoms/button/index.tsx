@@ -1,16 +1,9 @@
 import { component$, Slot } from '@builder.io/qwik';
-import { css } from '~/theme/config';
+import { css } from '@stitches/core';
 
-export const style = css({
-  button: {
-    backgroundColor: 'red',
-  },
-});
-
+export const style = css`background: #006ce9`;
 export const Button: any = component$(() => (
-  <button
-    class={style.button}
-  >
+  <button css={style}>
     <Slot />
   </button>
 ));
