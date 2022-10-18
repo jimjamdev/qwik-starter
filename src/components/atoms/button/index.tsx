@@ -7,6 +7,6 @@ export const Button = component$(() => {
   });
   console.log('buttonStyle', buttonStyle);
   return (
-    <button class={buttonStyle().className}><Slot /></button>
+    <button class={buttonStyle()}><Slot /></button>
   );
 });
