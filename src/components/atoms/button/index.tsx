@@ -5,8 +5,9 @@ export const Button = component$(() => {
   const buttonStyle = css({
     backgroundColor: 'red',
   });
-  console.log('buttonStyle', buttonStyle);
+  const style = buttonStyle();
+  console.log('buttonStyle', style);
   return (
-    <button class={buttonStyle()}><Slot /></button>
+    <button class={style}><Slot /></button>
   );
 });
