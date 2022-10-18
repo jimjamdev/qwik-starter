@@ -10,10 +10,13 @@ import { RouterHead } from './components/router-head/router-head';
 
 // import styles from './global.css?inline';
 import { LocaleProvider } from '~/context/locale';
+import { globalStyles } from '~/theme/global';
 
-console.log('getCssText()', getCssText().toString());
+console.log('getCssText()', getCssText());
 
-export default component$(() => (
+export default component$(() => {
+  globalStyles();
+  return (
     <QwikCity>
       <head>
         <meta charSet="utf-8" />
@@ -22,10 +25,11 @@ export default component$(() => (
         <RouterHead />
       </head>
       <body lang="en">
-        <LocaleProvider>
-          <RouterOutlet />
-        </LocaleProvider>
-        <ServiceWorkerRegister />
+      <LocaleProvider>
+        <RouterOutlet />
+      </LocaleProvider>
+      <ServiceWorkerRegister />
       </body>
     </QwikCity>
-));
+  );
+});
