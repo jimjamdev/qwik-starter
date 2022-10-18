@@ -12,6 +12,7 @@ import { RouterHead } from './components/router-head/router-head';
 import { LocaleProvider } from '~/context/locale';
 import { globalStyles } from '~/theme/global';
 
+export const styles = getCssText();
 console.log('getCssText()', getCssText());
 
 export default component$(() => {
@@ -21,7 +22,7 @@ export default component$(() => {
       <head>
         <meta charSet="utf-8" />
         { /* @ts-ignore */ }
-        <style id="stitches" dangerouslySetInnerHTML={{ __html: getCssText() }} />
+        <style id="stitches" dangerouslySetInnerHTML={{ __html: styles }} />
         <RouterHead />
       </head>
       <body lang="en">
