@@ -1,5 +1,5 @@
-import { css } from '@stitches/core';
 import { component$, Slot } from '@builder.io/qwik';
+import { css } from '~/theme/config';
 
 export const Button = component$(() => {
   const buttonStyle = css({
