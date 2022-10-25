@@ -6,8 +6,6 @@ module.exports = {
     node: true,
   },
   extends: [
-    'airbnb-base',
-    'airbnb-typescript/base',
     'plugin:qwik/recommended',
   ],
   parser: '@typescript-eslint/parser',

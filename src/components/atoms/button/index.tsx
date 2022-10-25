@@ -1,13 +1,7 @@
 import { component$, Slot } from '@builder.io/qwik';
-import { css } from '~/theme/config';
 
 export const Button = component$(() => {
-  const buttonStyle = css({
-    backgroundColor: 'red',
-  });
-  const style = buttonStyle();
-  console.log('buttonStyle', style);
   return (
-    <button class={style}><Slot /></button>
+    <button class="pointer-events-auto rounded-md bg-indigo-600 py-2 px-3 text-[0.8125rem] font-semibold leading-5 text-white hover:bg-indigo-500"><Slot /></button>
   );
 });
