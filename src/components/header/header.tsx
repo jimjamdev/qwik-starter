@@ -7,7 +7,7 @@ import { config } from '~/config';
 export default component$(() => {
   // useStylesScoped$(styles);
   const locale = getLocale();
-  const path = locale === config.defaultLocale ? '' : locale;
+  const path = locale === config.defaultLocale ? '/' : `/${locale}/`;
 
   return (
     <nav className="bg-gray-800">
@@ -38,10 +38,10 @@ export default component$(() => {
             <div className="hidden sm:ml-6 sm:block">
               <div className="flex space-x-4">
                 <Link href={`${path}`} className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
-                   aria-current="page">Dashboard</Link>
+                   aria-current="page">Home</Link>
 
-                <Link href={`${path}/listing`}
-                   className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Team</Link>
+                <Link href={`${path}listing`}
+                   className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Listing</Link>
 
                 <a href="#"
                    className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Projects</a>
@@ -76,12 +76,12 @@ export default component$(() => {
 
               <div
                 className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
-                role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabIndex="-1">
-                <a href="#" className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabIndex="-1"
+                role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabIndex={-1}>
+                <a href="#" className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabIndex={-1}
                    id="user-menu-item-0">Your Profile</a>
-                <a href="#" className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabIndex="-1"
+                <a href="#" className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabIndex={-1}
                    id="user-menu-item-1">Settings</a>
-                <a href="#" className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabIndex="-1"
+                <a href="#" className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabIndex={-1}
                    id="user-menu-item-2">Sign out</a>
               </div>
             </div>

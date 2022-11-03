@@ -12,9 +12,9 @@ export const Carousel = component$(() => {
   // useStylesScoped$(styles);
   const swiperRef = useSignal<any>();
   useClientEffect$(() => {
-    if (swiperRef.current) {
-      store.element = swiperRef.current;
-    }
+   /* if (swiperRef?.current) {
+      store.element = swiperRef.?current;
+    }*/
   });
   // const swiper = new Swiper(swiperRef, {});
   console.log('**Slot', Slot, 'element', store?.element);

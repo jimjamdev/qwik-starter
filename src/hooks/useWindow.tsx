@@ -1,5 +1,6 @@
-import { component$, useOnWindow, useStore } from '@builder.io/qwik';
+// import { component$, useOnWindow, useStore } from '@builder.io/qwik';
 
+/*
 export const useWindow = component$(() => {
   const store = useStore<{ win: Window | undefined }>(
     { win: undefined },
@@ -13,3 +14,6 @@ export const useWindow = component$(() => {
     height: store.win?.innerHeight,
   };
 });
+*/
+
+export const useWindow = 'blah'
