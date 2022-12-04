@@ -15,19 +15,17 @@ import { manifest } from '@qwik-client-manifest';
 import Root from './root';
 
 export default function (opts: RenderToStreamOptions) {
-  // @ts-ignore
-  const { req } = opts?.stream;
+  console.log('***opts', opts?.envData?.requestHeaders['accept-language']);
+  /*const { req } = opts?.stream;
   const { rawHeaders } = req;
-  console.log('headers', rawHeaders);
+  console.log('headers', rawHeaders);*/
   return renderToStream(<Root />, {
     manifest,
     ...opts,
-    prefetchStrategy: {
-      implementation: {
-        linkInsert: null,
-        workerFetchInsert: null,
-        prefetchEvent: 'always',
-      },
+    // Use container attributes to set attributes on the html tag.
+    containerAttributes: {
+      lang: 'en-us',
+      ...opts.containerAttributes,
     },
   });
 }

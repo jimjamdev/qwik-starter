@@ -6,5 +6,5 @@ export function getLocaleFromPath(path: string) {
   const getLocale = path.split('/')[1];
   const locale = formatPath(getLocale);
   const isLocale = config.locales.includes(locale);
-  return isLocale ? locale : undefined;
+  return isLocale ? locale : 'en';
 }
