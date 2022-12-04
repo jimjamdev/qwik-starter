@@ -15,10 +15,7 @@ import { manifest } from '@qwik-client-manifest';
 import Root from './root';
 
 export default function (opts: RenderToStreamOptions) {
-  console.log('***opts', opts?.envData?.requestHeaders['accept-language']);
-  /*const { req } = opts?.stream;
-  const { rawHeaders } = req;
-  console.log('headers', rawHeaders);*/
+  console.info('***opts', opts?.envData?.requestHeaders?.['accept-language']);
   return renderToStream(<Root />, {
     manifest,
     ...opts,
