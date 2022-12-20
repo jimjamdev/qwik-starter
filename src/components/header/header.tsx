@@ -11,11 +11,9 @@ export default component$(() => {
 
   return (
     <nav class={headerCss}>
-      <Link href={`${path}`} className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
-            aria-current="page">Home</Link>
+      <Link href={`${path}`} aria-current="page">Home</Link>
 
-      <Link href={`${path}listing`}
-            className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Listing</Link>
+      <Link href={`${path}listing`}>Listing</Link>
     </nav>
   );
 });

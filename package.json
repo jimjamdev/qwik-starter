@@ -23,27 +23,27 @@
     "test": "npm run lint:fix"
   },
   "devDependencies": {
-    "@builder.io/qwik": "^0.15.2",
+    "@builder.io/qwik": "^0.16.1",
     "@builder.io/qwik-city": "^0.0.128",
     "@types/eslint": "^8.4.10",
-    "@types/node": "^18.11.10",
-    "@typescript-eslint/eslint-plugin": "^5.45.0",
-    "@typescript-eslint/parser": "^5.45.0",
+    "@types/node": "^18.11.17",
+    "@typescript-eslint/eslint-plugin": "^5.47.0",
+    "@typescript-eslint/parser": "^5.47.0",
     "@vanilla-extract/css": "^1.9.2",
-    "eslint": "^8.29.0",
+    "eslint": "^8.30.0",
     "eslint-config-airbnb-typescript": "^17.0.0",
-    "eslint-plugin-qwik": "^0.15.2",
+    "eslint-plugin-qwik": "^0.16.1",
     "husky": "^8.0.2",
     "node-fetch": "^3.3.0",
-    "postcss": "^8.4.19",
-    "prettier": "^2.8.0",
-    "styled-vanilla-extract": "^0.5.0",
-    "typescript": "^4.9.3",
-    "vite": "^3.2.4",
-    "vite-tsconfig-paths": "^3.6.0"
+    "postcss": "^8.4.20",
+    "prettier": "^2.8.1",
+    "styled-vanilla-extract": "^0.5.3",
+    "typescript": "^4.9.4",
+    "vite": "^4.0.2",
+    "vite-tsconfig-paths": "^4.0.3"
   },
   "dependencies": {
-    "motion": "^10.14.3",
+    "motion": "^10.15.3",
     "swiper": "^8.4.5"
   }
 }
