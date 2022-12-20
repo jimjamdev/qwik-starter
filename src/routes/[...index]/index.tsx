@@ -1,7 +1,7 @@
 import { component$ } from '@builder.io/qwik';
 import { DocumentHead } from '@builder.io/qwik-city';
-import { Button } from '~/components/atoms/button';
 import { useLocale } from "~/context/locale";
+import { Button } from "~/ui/components/button";
 
 export default component$(() => {
   const { lang } = useLocale();
