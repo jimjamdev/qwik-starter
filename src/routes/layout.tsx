@@ -4,6 +4,7 @@ import Header from '../components/header/header';
 export default component$(() => (
   <>
     <main>
+      global
       <Header />
       <section>
         <Slot />
