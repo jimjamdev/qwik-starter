@@ -12,6 +12,7 @@ export default component$(() => {
     height: 0,
   });
   useClientEffect$(() => {
+    console.log('ref', ref?.value);
     if (ref.value) {
       const rect = ref.value.getBoundingClientRect();
       store.height = Math.round(rect.height);
