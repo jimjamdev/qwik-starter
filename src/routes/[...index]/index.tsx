@@ -4,11 +4,11 @@ import { Button } from '~/components/atoms/button';
 import { useLocale } from "~/context/locale";
 
 export default component$(() => {
-  const locale = useLocale();
-  console.log('locale', locale);
-  return (<div>locale route {locale.lang} <Button>Test</Button></div>);
+  const { lang } = useLocale();
+  console.log('locale', lang);
+  return (<div>locale route {lang} <Button>Test</Button></div>);
 });
 
 export const head: DocumentHead = {
-  title: 'Hello',
+  title: 'Casino App',
 };
