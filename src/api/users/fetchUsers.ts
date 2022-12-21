@@ -1,7 +1,9 @@
+export interface User {
+  strDrink: string;
+};
+
 export interface Users {
-  name: string;
-  height: number;
-  gender: string;
+  drinks: User[];
 }
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars

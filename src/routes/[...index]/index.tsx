@@ -24,7 +24,7 @@ export default component$(() => {
         onRejected={() => <div style={{ background: 'tomato', padding: '10px' }}>error</div>}
         onResolved={(users) => (
           <>
-            <pre>{JSON.stringify(users, null, 2)}</pre>
+            <pre>{JSON.stringify(users?.drinks[0].strDrink, null, 2)}</pre>
           </>
         )}
       />
