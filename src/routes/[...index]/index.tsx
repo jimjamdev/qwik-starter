@@ -14,6 +14,8 @@ export default component$(() => {
       </div>
       <Resource
         value={users}
+        onPending={() => <div>loading...</div>}
+        onRejected={() => <div>error</div>}
         onResolved={(users) => <>{JSON.stringify(users, null, 2)}</>}
       />
     </>
