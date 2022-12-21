@@ -7,6 +7,7 @@ export const theme = createThemeContract({
     brandDark: ''
   },
   font: {
-    body: ''
+    primary: '',
+    secondary: ''
   }
 });
