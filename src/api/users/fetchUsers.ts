@@ -1,5 +1,3 @@
-import type { RequestHandler } from '@builder.io/qwik-city';
-
 export interface Users {
   name: string;
   height: number;
