@@ -20,8 +20,8 @@ export default component$(() => {
       <h3>Users Data</h3>
       <Resource
         value={users}
-        onPending={() => <div>loading...</div>}
-        onRejected={() => <div>error</div>}
+        onPending={() => <div style={{ background: 'orange', padding: '10px' }}>loading...</div>}
+        onRejected={() => <div style={{ background: 'tomato', padding: '10px' }}>error</div>}
         onResolved={(users) => (
           <>
             <pre>{JSON.stringify(users, null, 2)}</pre>
