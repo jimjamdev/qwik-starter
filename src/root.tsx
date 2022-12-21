@@ -10,6 +10,9 @@ export default component$(() => {
   const theme = useStore({
     value: darkTheme,
   });
+  /*const switchTheme = () => {
+    theme.value = theme.value === darkTheme ? lightTheme : darkTheme;
+  };*/
   return (
     <QwikCityProvider>
       <head>
