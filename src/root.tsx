@@ -20,7 +20,6 @@ export default component$(() => {
         <RouterHead />
       </head>
       <body lang="en" class={theme.value}>
-      {/* eslint-disable-next-line qwik/valid-lexical-scope */}
       <button onClick$={() => theme.value = theme.value === darkTheme ? lightTheme : darkTheme}>switch</button>
       <LocaleProvider>
        <RouterOutlet />
