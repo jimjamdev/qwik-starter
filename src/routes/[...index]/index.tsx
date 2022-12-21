@@ -1,5 +1,9 @@
 import { component$, Resource } from "@builder.io/qwik";
-import { DocumentHead, RequestHandler, useEndpoint } from "@builder.io/qwik-city";
+import {
+  DocumentHead,
+  RequestHandler,
+  useEndpoint,
+} from "@builder.io/qwik-city";
 import { useLocale } from "~/context/locale";
 import { Button } from "~/ui/components/button";
 import { fetchUsers, Users } from "~/api/users/fetchUsers";
@@ -18,7 +22,11 @@ export default component$(() => {
         value={users}
         onPending={() => <div>loading...</div>}
         onRejected={() => <div>error</div>}
-        onResolved={(users) => <><pre>{JSON.stringify(users, null, 2)}</pre></>}
+        onResolved={(users) => (
+          <>
+            <pre>{JSON.stringify(users, null, 2)}</pre>
+          </>
+        )}
       />
     </>
   );
