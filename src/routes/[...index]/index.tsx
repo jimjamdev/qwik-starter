@@ -10,7 +10,6 @@ export const onGet: RequestHandler<Users> = async ({ params }) => fetchUsers();
 export default component$(() => {
   const { lang } = useLocale();
   const users = useEndpoint<Users>();
-  console.log('users', users);
   return (
     <>
       <div>
@@ -21,7 +20,7 @@ export default component$(() => {
         value={users}
         onPending={() => <div>loading...</div>}
         onRejected={() => <div>error</div>}
-        onResolved={(users) => <>{JSON.stringify(users, null, 2)}</>}
+        onResolved={(users) => <><pre>{JSON.stringify(users, null, 2)}</pre></>}
       />
     </>
   );

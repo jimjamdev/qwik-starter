@@ -8,6 +8,6 @@ export interface Users {
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export const fetchUsers = async () => {
-  const req = await fetch('https://swapi.dev/api/people/1/');
+  const req = await fetch('https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita');
   return req.json()
 };
