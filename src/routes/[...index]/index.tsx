@@ -2,7 +2,7 @@ import { component$, Resource } from "@builder.io/qwik";
 import { DocumentHead, useEndpoint } from "@builder.io/qwik-city";
 import { useLocale } from "~/context/locale";
 import { Button } from "~/ui/components/button";
-import { Users } from "~/data/users/fetchUsers";
+import { Users } from "~/api/users/fetchUsers";
 
 export default component$(() => {
   const { lang } = useLocale();
