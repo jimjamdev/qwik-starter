@@ -7,11 +7,13 @@ import { Users } from "~/data/users/fetchUsers";
 export default component$(() => {
   const { lang } = useLocale();
   const users = useEndpoint<Users>();
+  console.log('users', users);
   return (
     <>
       <div>
         locale route {lang} <Button>Test</Button>
       </div>
+      <h3>Users Data</h3>
       <Resource
         value={users}
         onPending={() => <div>loading...</div>}
