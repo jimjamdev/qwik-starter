@@ -15,13 +15,13 @@ import { manifest } from '@qwik-client-manifest';
 import Root from './root';
 
 export default function (opts: RenderToStreamOptions) {
-  console.info('***opts', opts?.envData?.requestHeaders?.['accept-language']);
+  const lang = opts?.envData?.requestHeaders?.['accept-language']?.split(',')[0] || 'en-us';
   return renderToStream(<Root />, {
     manifest,
     ...opts,
     // Use container attributes to set attributes on the html tag.
     containerAttributes: {
-      lang: 'en-us',
+      lang,
       ...opts.containerAttributes,
     },
   });
