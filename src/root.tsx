@@ -1,4 +1,4 @@
-import { component$, useStore } from "@builder.io/qwik";
+import { component$, useStore, $ } from "@builder.io/qwik";
 import { QwikCityProvider, RouterOutlet, ServiceWorkerRegister } from "@builder.io/qwik-city";
 import { RouterHead } from './components/router-head/router-head';
 import { darkTheme } from "~/ui/theme/dark.css";
@@ -10,17 +10,17 @@ export default component$(() => {
   const theme = useStore({
     value: darkTheme,
   });
-  /*const switchTheme = () => {
+  const switchTheme = $(() => {
     theme.value = theme.value === darkTheme ? lightTheme : darkTheme;
-  };*/
+  });
   return (
     <QwikCityProvider>
       <head>
         <meta charSet="utf-8" />
         <RouterHead />
       </head>
-      <body lang="en" class={theme.value}>
-      <button onClick$={() => theme.value = theme.value === darkTheme ? lightTheme : darkTheme}>switch</button>
+      <body class={theme.value}>
+      <button onClick$={switchTheme}>switch</button>
       <LocaleProvider>
        <RouterOutlet />
       </LocaleProvider>
