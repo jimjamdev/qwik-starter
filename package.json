@@ -16,12 +16,11 @@
     "fmt.check": "prettier --check .",
     "lint": "eslint ./src/**/*.tsx",
     "lint:fix": "eslint ./src/**/*.tsx --fix",
-    "prepare": "husky install",
-    "preview": "vite preview --open",
-    "preview:static": "npm run build.server && node server/entry.ssr.js",
+    "preview": "qwik build preview && vite preview --open",
     "start": "vite --open --mode ssr",
-    "test": "npm run lint:fix",
-    "qwik": "qwik"
+    "qwik": "qwik",
+    "prepare": "husky install",
+    "test": "npm run lint:fix"
   },
   "devDependencies": {
     "@builder.io/qwik": "^0.16.1",
