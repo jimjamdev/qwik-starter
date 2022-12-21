@@ -3,9 +3,7 @@ import { DocumentHead, RequestHandler, useEndpoint } from "@builder.io/qwik-city
 import { useLocale } from "~/context/locale";
 import { Button } from "~/ui/components/button";
 import { fetchUsers, Users } from "~/api/users/fetchUsers";
-
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-export const onGet: RequestHandler<Users> = async ({ params }) => fetchUsers();
+export const onGet: RequestHandler<Users> = async () => fetchUsers();
 
 export default component$(() => {
   const { lang } = useLocale();
