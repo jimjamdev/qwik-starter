@@ -6,7 +6,7 @@ import {
 } from "@builder.io/qwik-city";
 import { useLocale } from "~/context/locale";
 import { Button } from "~/ui/components/button";
-import { fetchUsers, Users } from "~/api/users/fetchUsers";
+import { fetchUsers, Users } from "~/api";
 export const onGet: RequestHandler<Users> = async () => fetchUsers();
 
 export default component$(() => {
