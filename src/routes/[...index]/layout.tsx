@@ -8,7 +8,7 @@ export const Header = component$(() => {
 });
 
 export default component$(() => (
-  <DefaultLayout header={Header}>
+  <DefaultLayout headerComponent={Header}>
     <Slot />
   </DefaultLayout>
 ));

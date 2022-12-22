@@ -9,25 +9,30 @@ import {
 } from "./default.css";
 
 export interface DefaultLayout {
-  header?: Component<any>;
+  headerComponent?: Component<any>;
   sidebar?: Component<any>;
   footer?: Component<any>;
 }
 
-export const DefaultLayout = component$(({ header, footer, sidebar }: DefaultLayout) => {
+export const DefaultLayout = component$(
+  ({ headerComponent, footer, sidebar }: DefaultLayout) => {
+    const HeaderComponent = headerComponent || (() => <></>);
 
-  const Header = header || (() => <></>);
-
-  return (
-    <div class={DefaultLayoutCss}>
-      <aside class={DefaultLayoutSidebarCss}>{sidebar}</aside>
-      <main className={DefaultLayoutMainCss}>
-        { header ? <header class={DefaultLayoutHeaderCss}><Header /></header> : null }
-        <article class={DefaultLayoutContentCss}>
-          <Slot />
-        </article>
-       <footer class={DefaultLayoutFooterCss}>{footer}</footer>
-      </main>
-    </div>
-  );
-});
+    return (
+      <div class={DefaultLayoutCss}>
+        <aside class={DefaultLayoutSidebarCss}>{sidebar}</aside>
+        <main className={DefaultLayoutMainCss}>
+          {headerComponent ? (
+            <header class={DefaultLayoutHeaderCss}>
+              <HeaderComponent />
+            </header>
+          ) : null}
+          <article class={DefaultLayoutContentCss}>
+            <Slot />
+          </article>
+          <footer class={DefaultLayoutFooterCss}>{footer}</footer>
+        </main>
+      </div>
+    );
+  }
+);
