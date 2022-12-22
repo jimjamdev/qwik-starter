@@ -11,17 +11,20 @@ import {
 export interface DefaultLayout {
   headerComponent?: Component<any>;
   sidebarComponent?: Component<any>;
-  footer?: Component<any>;
+  footerComponent?: Component<any>;
 }
 
 export const DefaultLayout = component$(
-  ({ headerComponent, footer, sidebarComponent }: DefaultLayout) => {
+  ({ headerComponent, footerComponent, sidebarComponent }: DefaultLayout) => {
     const HeaderComponent = headerComponent || (() => <></>);
     const SidebarComponent = sidebarComponent || (() => <></>);
+    const FooterComponent = footerComponent || (() => <></>);
 
     return (
       <div class={DefaultLayoutCss}>
-        <aside class={DefaultLayoutSidebarCss}><SidebarComponent /></aside>
+        <aside class={DefaultLayoutSidebarCss}>
+          <SidebarComponent />
+        </aside>
         <main class={DefaultLayoutMainCss}>
           {headerComponent ? (
             <header class={DefaultLayoutHeaderCss}>
@@ -31,7 +34,11 @@ export const DefaultLayout = component$(
           <article class={DefaultLayoutContentCss}>
             <Slot />
           </article>
-          <footer class={DefaultLayoutFooterCss}>{footer}</footer>
+          {footerComponent ? (
+            <footer class={DefaultLayoutFooterCss}>
+              <FooterComponent />
+            </footer>
+          ) : null}
         </main>
       </div>
     );
