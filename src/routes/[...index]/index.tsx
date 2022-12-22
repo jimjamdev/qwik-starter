@@ -30,7 +30,7 @@ export default component$(() => {
       <div>
         locale route {lang} <Button>Test</Button>
       </div>
-      <h3>Users Data...</h3>
+      <h1>Users Data...</h1>
       <Resource
         value={users}
         onPending={() => <div style={{ background: 'orange', padding: '10px' }}>loading...</div>}

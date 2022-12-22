@@ -3,13 +3,13 @@ import { DefaultLayout } from "~/ui/layouts/default";
 
 export const Header = component$(() => {
   return (
-      <h1>Header</h1>
+      <div>Header</div>
   );
 });
 
 export const SideBar = component$(() => {
   return (
-    <h1>Side</h1>
+    <div>Side</div>
   );
 });
 
