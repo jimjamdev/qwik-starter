@@ -22,7 +22,7 @@ export const DefaultLayout = component$(
     return (
       <div class={DefaultLayoutCss}>
         <aside class={DefaultLayoutSidebarCss}><SidebarComponent /></aside>
-        <main className={DefaultLayoutMainCss}>
+        <main class={DefaultLayoutMainCss}>
           {headerComponent ? (
             <header class={DefaultLayoutHeaderCss}>
               <HeaderComponent />

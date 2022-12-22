@@ -1,4 +1,5 @@
-import { component$, Resource } from "@builder.io/qwik";
+import { component$, Resource, useClientEffect$ } from "@builder.io/qwik";
+import { animate } from "motion";
 import {
   DocumentHead,
   RequestHandler,
@@ -12,6 +13,18 @@ export const onGet: RequestHandler<Users> = async () => fetchUsers();
 export default component$(() => {
   const { lang } = useLocale();
   const users = useEndpoint<Users>();
+  useClientEffect$(async () => {
+    animate(
+      "button",
+      { rotate: 90 },
+      {
+        duration: 0.5,
+        easing: "ease-in-out",
+        repeat: 3,
+        direction: "alternate"
+      }
+    )
+  });
   return (
     <>
       <div>
