@@ -7,9 +7,8 @@ import {
 import { RouterHead } from "./components/router-head/router-head";
 import { darkTheme } from "~/ui/theme/dark.css";
 import { lightTheme } from "~/ui/theme/light.css";
-import { LocaleProvider } from "~/context/locale";
 import "~/ui/theme/global.css";
-import { ThemeProvider } from "~/ui/theme/provider";
+import { ThemeProvider, LocaleProvider } from "~/ui/providers";
 
 export default component$(() => {
   const theme = useStore({
