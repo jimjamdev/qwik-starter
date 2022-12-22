@@ -24,13 +24,13 @@ export default component$(() => {
         <RouterHead />
       </head>
       <ThemeProvider theme={theme.value}>
-        <body class={theme.value}>
-          <button onClick$={switchTheme}>switch</button>
-          <LocaleProvider>
+        <LocaleProvider>
+          <body class={theme.value}>
+            <button onClick$={switchTheme}>switch</button>
             <RouterOutlet />
-          </LocaleProvider>
-          <ServiceWorkerRegister />
-        </body>
+            <ServiceWorkerRegister />
+          </body>
+        </LocaleProvider>
       </ThemeProvider>
     </QwikCityProvider>
   );
