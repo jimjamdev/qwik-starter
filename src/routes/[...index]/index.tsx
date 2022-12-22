@@ -33,5 +33,5 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-  title: "Casino App",
+  title: `Casino App`,
 };
