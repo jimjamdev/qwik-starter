@@ -1,4 +1,4 @@
-import { component$, Slot } from "@builder.io/qwik";
+import { component$, JSXNode, Slot } from "@builder.io/qwik";
 import {
   DefaultLayoutContentCss,
   DefaultLayoutCss,
@@ -8,17 +8,23 @@ import {
   DefaultLayoutSidebarCss,
 } from "./default.css";
 
-export const DefaultLayout = component$(({ header, footer, sidebar }) => {
+export interface DefaultLayout {
+  header?: JSXNode;
+  sidebar?: JSXNode;
+  footer?: JSXNode;
+}
+
+export const DefaultLayout = component$(({ header, footer, sidebar }: DefaultLayout) => {
   return (
-    <section class={DefaultLayoutCss}>
-      <aside class={DefaultLayoutSidebarCss}>{sidebar}</aside>
-      <main className={DefaultLayoutMainCss}>
-        <header class={DefaultLayoutHeaderCss}>{header}</header>
+    <main class={DefaultLayoutCss}>
+      { sidebar ? <aside class={DefaultLayoutSidebarCss}>{sidebar}</aside> : null }
+      <section className={DefaultLayoutMainCss}>
+        { header ? <header class={DefaultLayoutHeaderCss}>{header}</header> : null }
         <article class={DefaultLayoutContentCss}>
           <Slot />
         </article>
-        <footer class={DefaultLayoutFooterCss}>{footer}</footer>
-      </main>
-    </section>
+        { footer ? <footer class={DefaultLayoutFooterCss}>{footer}</footer> : null }
+      </section>
+    </main>
   );
 });
