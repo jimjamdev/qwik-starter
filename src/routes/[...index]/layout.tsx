@@ -7,8 +7,14 @@ export const Header = component$(() => {
   );
 });
 
+export const SideBar = component$(() => {
+  return (
+    <h1>Side</h1>
+  );
+});
+
 export default component$(() => (
-  <DefaultLayout headerComponent={Header}>
+  <DefaultLayout headerComponent={Header} sidebarComponent={SideBar}>
     <Slot />
   </DefaultLayout>
 ));

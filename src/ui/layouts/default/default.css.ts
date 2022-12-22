@@ -6,17 +6,18 @@ export const DefaultLayoutCss = style({
     "sidebar"
     "main"
     `,
-  gridTemplateRows: "auto 1fr",
+  gridTemplateColumns: "auto 1fr",
   minHeight: "100vh",
 });
 
 export const DefaultLayoutSidebarCss = style({
   gridArea: "sidebar",
+  minWidth: "200px",
 });
 export const DefaultLayoutMainCss = style({
   gridArea: "main",
   display: "grid",
-  gridTemplateRows: "auto 1fr auto",
+  gridTemplateColumns: "auto 1fr auto",
   gridTemplateAreas: `
     "header"
     "content"
