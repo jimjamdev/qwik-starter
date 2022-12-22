@@ -11,6 +11,7 @@ export const DefaultLayoutCss = style({
 
 export const DefaultLayoutSidebarCss = style({
   gridArea: "sidebar",
+  backgroundColor: '#f0f0f0',
 });
 export const DefaultLayoutMainCss = style({
   gridArea: "main",
