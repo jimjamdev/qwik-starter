@@ -20,7 +20,7 @@ export default component$(() => {
       {
         duration: 0.5,
         easing: "ease-in-out",
-        repeat: 3,
+        repeat: Infinity,
         direction: "alternate"
       }
     )
