@@ -24,6 +24,9 @@
     "test": "npm run lint:fix",
     "qwik": "qwik"
   },
+  "overrides": {
+    "vite": "$vite"
+  },
   "devDependencies": {
     "@builder.io/qwik": "^0.16.1",
     "@builder.io/qwik-city": "^0.0.128",
