@@ -11,7 +11,6 @@ export const DefaultLayoutCss = style({
 
 export const DefaultLayoutSidebarCss = style({
   gridArea: "sidebar",
-  minWidth: "200px",
 });
 export const DefaultLayoutMainCss = style({
   gridArea: "main",
