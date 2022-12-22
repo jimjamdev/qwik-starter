@@ -1,5 +1,9 @@
-import { component$, Slot } from '@builder.io/qwik';
+import { component$, Slot } from "@builder.io/qwik";
+import { DefaultLayout } from "~/ui/layouts/default";
 
 export default component$(() => (
-  <section><h1>Test inner slot - inner layout</h1><Slot /></section>
+  <DefaultLayout>
+    <h1>Test inner slot - inner layout</h1>
+    <Slot />
+  </DefaultLayout>
 ));
