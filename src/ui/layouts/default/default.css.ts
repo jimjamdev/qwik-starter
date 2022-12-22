@@ -3,8 +3,7 @@ import { style } from "styled-vanilla-extract/qwik";
 export const DefaultLayoutCss = style({
   display: "grid",
   gridTemplateAreas: `
-    "sidebar"
-    "main"
+    "sidebar main"
     `,
   gridTemplateColumns: "auto 1fr",
   minHeight: "100vh",
@@ -17,7 +16,7 @@ export const DefaultLayoutSidebarCss = style({
 export const DefaultLayoutMainCss = style({
   gridArea: "main",
   display: "grid",
-  gridTemplateColumns: "auto 1fr auto",
+  gridTemplateRows: "auto 1fr auto",
   gridTemplateAreas: `
     "header"
     "content"
