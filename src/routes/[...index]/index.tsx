@@ -47,4 +47,10 @@ export default component$(() => {
 
 export const head: DocumentHead = {
   title: `Casino App`,
+  meta: [
+    {
+      name: "description",
+      content: "Casino App",
+    }
+  ],
 };
