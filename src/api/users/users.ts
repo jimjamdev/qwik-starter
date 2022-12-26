@@ -1,6 +1,6 @@
 export interface User {
   strDrink: string;
-};
+}
 
 export interface Users {
   drinks: User[];
