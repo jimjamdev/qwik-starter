@@ -8,13 +8,16 @@ import {
 import { Button } from "~/ui/components/button";
 import { fetchUsers, fetchUsers2, Users, Users2 } from "~/api";
 import { useLocale } from "~/ui/providers";
-export const onGet: RequestHandler<Users> = async () => fetchUsers();
-export const onGet2: RequestHandler<Users2> = async () => fetchUsers2();
+export const onGet: RequestHandler<{ users: Users, ip: Users2 }> = async () => {
+  return {
+    users: await fetchUsers(),
+    ip: await fetchUsers2(),
+  };
+};
 
 export default component$(() => {
   const { lang } = useLocale();
   const users = useEndpoint<Users>();
-  const users2 = useEndpoint<Users2>();
   useClientEffect$(async () => {
     animate(
       "button.btn-spin",
@@ -39,18 +42,7 @@ export default component$(() => {
         onRejected={() => <div style={{ background: 'tomato', padding: '10px' }}>error</div>}
         onResolved={(users) => (
           <>
-            <pre>{JSON.stringify(users?.drinks[0].strDrink, null, 2)}</pre>
-          </>
-        )}
-      />
-      <h2>Users2</h2>
-      <Resource
-        value={users2}
-        onPending={() => <div style={{ background: 'orange', padding: '10px' }}>loading...</div>}
-        onRejected={() => <div style={{ background: 'tomato', padding: '10px' }}>error</div>}
-        onResolved={(users2) => (
-          <>
-            <pre>{JSON.stringify(users2, null, 2)}</pre>
+            <pre>{JSON.stringify(users, null, 2)}</pre>
           </>
         )}
       />
