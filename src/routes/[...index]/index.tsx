@@ -6,12 +6,12 @@ import {
   useEndpoint,
 } from "@builder.io/qwik-city";
 import { Button } from "~/ui/components/button";
-import { fetchUsers, fetchUsers2, Users, Users2 } from "~/api";
+import { fetchUsers, fetchIP, Users, IP } from "~/api";
 import { useLocale } from "~/ui/providers";
-export const onGet: RequestHandler<{ users: Users, ip: Users2 }> = async () => {
+export const onGet: RequestHandler<{ users: Users, ip: IP }> = async () => {
   return {
     users: await fetchUsers(),
-    ip: await fetchUsers2(),
+    ip: await fetchIP(),
   };
 };
 

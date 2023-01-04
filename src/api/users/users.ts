@@ -6,7 +6,7 @@ export interface Users {
   drinks: User[];
 }
 
-export interface Users2 {
+export interface IP {
   ip: string;
 }
 
@@ -15,7 +15,7 @@ export const fetchUsers = async () => {
   return req.json()
 };
 
-export const fetchUsers2 = async () => {
+export const fetchIP = async () => {
   const req = await fetch('https://api.ipify.org/?format=json');
   return req.json()
 };
