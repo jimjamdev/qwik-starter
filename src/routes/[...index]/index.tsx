@@ -8,7 +8,13 @@ import {
 import { Button } from "~/ui/components/button";
 import { fetchUsers, fetchIP, Users, IP } from "~/api";
 import { useLocale } from "~/ui/providers";
-export const onGet: RequestHandler<{ users: Users, ip: IP }> = async () => {
+import { Box } from "~/ui/components/box";
+
+export interface HomeProps {
+  users: Users;
+  ip: IP;
+}
+export const onGet: RequestHandler<HomeProps> = async () => {
   return {
     users: await fetchUsers(),
     ip: await fetchIP(),
@@ -17,7 +23,7 @@ export const onGet: RequestHandler<{ users: Users, ip: IP }> = async () => {
 
 export default component$(() => {
   const { lang } = useLocale();
-  const users = useEndpoint<Users>();
+  const users = useEndpoint<HomeProps>();
   useClientEffect$(async () => {
     animate(
       "button.btn-spin",
@@ -34,6 +40,8 @@ export default component$(() => {
     <>
       <div>
         locale route {lang} <Button class="btn-spin">Test</Button>
+        { /* @ts-ignore */ }
+        <Box bg={{mobile: '$blue100', tablet: '$blue200'}}>Box</Box>
       </div>
       <h1>Users Data...</h1>
       <Resource
@@ -42,7 +50,7 @@ export default component$(() => {
         onRejected={() => <div style={{ background: 'tomato', padding: '10px' }}>error</div>}
         onResolved={(users) => (
           <>
-            <pre>{JSON.stringify(users, null, 2)}</pre>
+            <pre>{JSON.stringify(users?.users?.drinks[0]?.strDrink, null, 2)}</pre>
           </>
         )}
       />
