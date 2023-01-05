@@ -6,7 +6,7 @@ import { baseTheme } from "~/ui/theme/base.css";
 export const darkTheme = createTheme(theme, {
   ...baseTheme,
   color: {
-    brandLight: "#3c6ce3",
+    brandLight: "#e5ecff",
     brand: "#043678",
     brandDark: "#010b2c",
   },

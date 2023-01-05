@@ -1,6 +1,6 @@
 export const baseTheme = {
   color: {
-    brandLight: "#e3763c",
+    brandLight: "#f6d9ca",
     brand: "#781904",
     brandDark: "#2c0701",
   },
