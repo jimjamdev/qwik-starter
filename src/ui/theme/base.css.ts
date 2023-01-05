@@ -8,4 +8,10 @@ export const baseTheme = {
     primary: "Arial, system-ui, sans-serif",
     secondary: "Helvetica, system-ui, sans-serif",
   },
+  space: {
+    none: '0',
+    small: '4px',
+    medium: '8px',
+    large: '16px',
+  },
 };

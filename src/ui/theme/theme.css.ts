@@ -9,5 +9,11 @@ export const theme = createThemeContract({
   font: {
     primary: '',
     secondary: ''
-  }
+  },
+  space: {
+    none: '',
+    small: '',
+    medium: '',
+    large: '',
+  },
 });

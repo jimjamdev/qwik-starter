@@ -40,8 +40,7 @@ export default component$(() => {
     <>
       <div>
         locale route {lang} <Button class="btn-spin">Test</Button>
-        { /* @ts-ignore */ }
-        <Box bg={{mobile: '$blue100', tablet: '$blue200'}}>Box</Box>
+        <Box as="button" color="$brandLight" bg={{mobile: '$brand', tablet: '$brandDark'}}>Box</Box>
       </div>
       <h1>Users Data...</h1>
       <Resource

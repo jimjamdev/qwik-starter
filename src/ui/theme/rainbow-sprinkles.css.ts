@@ -1,25 +1,6 @@
 // rainbow-sprinkles.css.ts
 import { defineProperties, createRainbowSprinkles } from 'rainbow-sprinkles';
-
-// or import a theme (e.g. `createTheme`, `createThemeContract`)
-const vars = {
-  space: {
-    none: 0,
-    small: '4px',
-    medium: '8px',
-    large: '16px',
-    // etc.
-  },
-  colors: {
-    blue50: '#eff6ff',
-    blue100: '#dbeafe',
-    blue200: '#bfdbfe',
-    gray700: '#374151',
-    gray800: '#1f2937',
-    gray900: '#111827',
-    // etc.
-  },
-};
+import { theme } from "~/ui/theme/theme.css";
 
 const responsiveProperties = defineProperties({
   conditions: {
@@ -30,13 +11,13 @@ const responsiveProperties = defineProperties({
   defaultCondition: 'mobile',
   dynamicProperties: {
     // Define pre-determined values, which will be autosuggested
-    color: vars.colors,
-    backgroundColor: vars.colors,
-    margin: vars.space,
-    marginTop: vars.space,
-    marginLeft: vars.space,
-    marginRight: vars.space,
-    marginBottom: vars.space,
+    color: theme.color,
+    backgroundColor: theme.color,
+    margin: theme.space,
+    marginTop: theme.space,
+    marginLeft: theme.space,
+    marginRight: theme.space,
+    marginBottom: theme.space,
     // Will work with any CSS value
     display: true,
     textAlign: true,
