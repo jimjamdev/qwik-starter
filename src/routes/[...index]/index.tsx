@@ -1,5 +1,5 @@
-import { component$ } from "@builder.io/qwik";
-// import { animate } from "motion";
+import { component$, useClientEffect$ } from "@builder.io/qwik";
+import { animate } from "motion";
 import {
   DocumentHead, loader$,
 } from "@builder.io/qwik-city";
@@ -24,7 +24,7 @@ export const getUser = loader$(async () => fetchUsers());
 export default component$(() => {
   const { lang } = useLocale();
   const users = getUser.use();
-  /*useClientEffect$(async () => {
+  useClientEffect$(async () => {
     animate(
       "button.btn-spin",
       { rotate: 90 },
@@ -35,7 +35,7 @@ export default component$(() => {
         direction: "alternate"
       }
     )
-  });*/
+  });
   return (
     <>
       <div>
