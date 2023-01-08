@@ -1,12 +1,10 @@
-import { component$, Resource, useClientEffect$ } from "@builder.io/qwik";
-import { animate } from "motion";
+import { component$ } from "@builder.io/qwik";
+// import { animate } from "motion";
 import {
-  DocumentHead,
-  RequestHandler,
-  useEndpoint,
+  DocumentHead, loader$,
 } from "@builder.io/qwik-city";
 import { Button } from "~/ui/components/button";
-import { fetchUsers, fetchIP, Users, IP } from "~/api";
+import { fetchUsers, Users, IP } from "~/api";
 import { useLocale } from "~/ui/providers";
 import { Box } from "~/ui/components/box";
 
@@ -14,17 +12,19 @@ export interface HomeProps {
   users: Users;
   ip: IP;
 }
-export const onGet: RequestHandler<HomeProps> = async () => {
+/*export const onGet: RequestHandler<HomeProps> = async () => {
   return {
     users: await fetchUsers(),
     ip: await fetchIP(),
   };
-};
+};*/
+
+export const getUser = loader$(async () => fetchUsers());
 
 export default component$(() => {
   const { lang } = useLocale();
-  const users = useEndpoint<HomeProps>();
-  useClientEffect$(async () => {
+  const users = getUser.use();
+  /*useClientEffect$(async () => {
     animate(
       "button.btn-spin",
       { rotate: 90 },
@@ -35,7 +35,7 @@ export default component$(() => {
         direction: "alternate"
       }
     )
-  });
+  });*/
   return (
     <>
       <div>
@@ -43,16 +43,17 @@ export default component$(() => {
         <Box as="button" color="$brandLight" bg={{mobile: '$brand', tablet: '$brandDark'}} margin="$large">Box</Box>
       </div>
       <h1>Users Data...</h1>
-      <Resource
+      <pre>{JSON.stringify(users.value, null, 2)}</pre>
+      {/*<Resource
         value={users}
         onPending={() => <div style={{ background: 'orange', padding: '10px' }}>loading...</div>}
         onRejected={() => <div style={{ background: 'tomato', padding: '10px' }}>error</div>}
         onResolved={(users) => (
           <>
-            <pre>{JSON.stringify(users?.users?.drinks[0]?.strDrink, null, 2)}</pre>
+            <pre>{JSON.stringify(users, null, 2)}</pre>
           </>
         )}
-      />
+      />*/}
     </>
   );
 });
