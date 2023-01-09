@@ -1,9 +1,9 @@
 export interface User {
-  strDrink: string;
+  breed: string;
 }
 
 export interface Users {
-  drinks: User[];
+  data: User[];
 }
 
 export interface IP {
