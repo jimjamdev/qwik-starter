@@ -4,6 +4,7 @@ import { component$, Slot } from "@builder.io/qwik";
 export interface BoxProps extends Sprinkles {
   class?: string;
   as?: any;
+  ref?: any;
 }
 
 export const Box = component$((props: BoxProps) => {

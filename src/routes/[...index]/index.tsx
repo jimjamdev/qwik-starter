@@ -1,4 +1,4 @@
-import { component$, useClientEffect$ } from "@builder.io/qwik";
+import { component$, useClientEffect$, useSignal } from "@builder.io/qwik";
 import { animate } from "motion";
 import {
   DocumentHead, loader$,
@@ -12,8 +12,12 @@ export const getUser = loader$(async ({ params }) => fetchUsers({ page: params.p
 
 export default component$(() => {
   const { lang } = useLocale();
+  const buttonRef = useSignal<Element>();
   const users = getUser.use();
   useClientEffect$(async () => {
+    if(buttonRef.value) {
+      console.log('***buttonRef', buttonRef.value);
+    }
     animate(
       "button.btn-spin",
       { rotate: 90 },
@@ -29,7 +33,7 @@ export default component$(() => {
     <>
       <div>
         locale route {lang} <Button class="btn-spin">Test</Button>
-        <Box as="button" color="$brandLight" bg={{mobile: '$brand', tablet: '$brandDark'}} margin="$large">Box</Box>
+        <Box ref={buttonRef} as="button" color="$brandLight" bg={{mobile: '$brand', tablet: '$brandDark'}} margin="$large">Box</Box>
       </div>
       <h1>Users Data...</h1>
       <pre>{JSON.stringify(users.value, null, 2)}</pre>
