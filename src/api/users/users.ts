@@ -9,7 +9,7 @@ export interface Users {
 export interface IP {
   ip: string;
 }
-
+//Test fetch
 export const fetchUsers = async (params: { limit: number, page: number }): Promise<Users> => {
   const { limit = 5, page = 1 } = params || {};
   const req = await fetch(`https://catfact.ninja/breeds?limit=${limit}&page=${page}`);
