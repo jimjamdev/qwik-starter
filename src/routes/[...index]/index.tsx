@@ -8,7 +8,7 @@ import { fetchUsers } from "~/api";
 import { useLocale } from "~/ui/providers";
 import { Box } from "~/ui/components/box";
 
-export const getUser = loader$(async ({ params }) => fetchUsers({ page: params.index }));
+export const getUser = loader$(async ({ query }) => fetchUsers({ page: query.get("page") || "1" }));
 
 export default component$(() => {
   const { lang } = useLocale();
