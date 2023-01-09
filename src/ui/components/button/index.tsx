@@ -8,5 +8,5 @@ export interface ButtonProps {
 
 export const Button = component$((props: ButtonProps) => {
 
-  return <button class={buttonCss() + ' ' + props.class}><Slot /></button>;
+  return <button class={[buttonCss(), props.class].join(' ')}><Slot /></button>;
 });
