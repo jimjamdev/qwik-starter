@@ -4,22 +4,11 @@ import {
   DocumentHead, loader$,
 } from "@builder.io/qwik-city";
 import { Button } from "~/ui/components/button";
-import { fetchUsers, Users, IP } from "~/api";
+import { fetchUsers } from "~/api";
 import { useLocale } from "~/ui/providers";
 import { Box } from "~/ui/components/box";
 
-export interface HomeProps {
-  users: Users;
-  ip: IP;
-}
-/*export const onGet: RequestHandler<HomeProps> = async () => {
-  return {
-    users: await fetchUsers(),
-    ip: await fetchIP(),
-  };
-};*/
-
-export const getUser = loader$(async () => fetchUsers());
+export const getUser = loader$(async () => fetchUsers({ limit: 1, page: 1 }));
 
 export default component$(() => {
   const { lang } = useLocale();
@@ -43,7 +32,7 @@ export default component$(() => {
         <Box as="button" color="$brandLight" bg={{mobile: '$brand', tablet: '$brandDark'}} margin="$large">Box</Box>
       </div>
       <h1>Users Data...</h1>
-      <pre>{JSON.stringify(users.value.drinks[0].strDrink, null, 2)}</pre>
+      <pre>{JSON.stringify(users.value, null, 2)}</pre>
       {/*<Resource
         value={users}
         onPending={() => <div style={{ background: 'orange', padding: '10px' }}>loading...</div>}

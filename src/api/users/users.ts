@@ -10,8 +10,9 @@ export interface IP {
   ip: string;
 }
 
-export const fetchUsers = async (): Promise<Users> => {
-  const req = await fetch('https://www.thecocktaildb.com/api/json/v1/1/random.php');
+export const fetchUsers = async (params: { limit: number, page: number }): Promise<Users> => {
+  const { limit = 5, page = 1 } = params || {};
+  const req = await fetch(`https://catfact.ninja/breeds?limit=${limit}&page=${page}`);
   return req.json()
 };
 
