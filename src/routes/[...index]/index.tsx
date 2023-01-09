@@ -32,6 +32,8 @@ export default component$(() => {
         <Box as="button" color="$brandLight" bg={{mobile: '$brand', tablet: '$brandDark'}} margin="$large">Box</Box>
       </div>
       <h1>Users Data...</h1>
+      <pre>{JSON.stringify(users, null, 2)}</pre>
+      <h1>Blah</h1>
       <pre>{JSON.stringify(users.value, null, 2)}</pre>
       {/*<Resource
         value={users}
