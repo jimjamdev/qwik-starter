@@ -8,7 +8,7 @@ import { fetchUsers } from "~/api";
 import { useLocale } from "~/ui/providers";
 import { Box } from "~/ui/components/box";
 
-export const getUser = loader$(async ({ params }) => fetchUsers(params));
+export const getUser = loader$(async ({ params }) => fetchUsers({ page: params.page }));
 
 export default component$(() => {
   const { lang } = useLocale();
@@ -32,8 +32,6 @@ export default component$(() => {
         <Box as="button" color="$brandLight" bg={{mobile: '$brand', tablet: '$brandDark'}} margin="$large">Box</Box>
       </div>
       <h1>Users Data...</h1>
-      <pre>{JSON.stringify(users, null, 2)}</pre>
-      <h1>Blah</h1>
       <pre>{JSON.stringify(users.value, null, 2)}</pre>
       {/*<Resource
         value={users}

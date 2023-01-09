@@ -11,8 +11,8 @@ export interface IP {
 }
 
 export interface Params {
-  limit?: number;
-  page?: number;
+  limit?: number | string;
+  page?: number | string;
 }
 //Test fetch
 export const fetchUsers = async (params: Params): Promise<Users> => {
