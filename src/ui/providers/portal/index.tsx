@@ -24,7 +24,7 @@ export const PortalProvider = component$((props: any) => {
   const defaultState = {
     value: {
       activePortals: ['somePortal'],
-    }
+    },
   }
   // const { portalsList = {} } = props;
   console.log("***portalProps", props);
