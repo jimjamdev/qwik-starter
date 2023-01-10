@@ -36,9 +36,9 @@ export default component$(() => {
   return (
     <>
       <Box as="section">
-        locale route {lang} <Button class="btn-spin" onClick$={ () => openPortal ? openPortal("test1") : undefined}>Test Portal</Button>
-        <Box ref={buttonRef} as="button" color="$brandLight" bg={{mobile: '$brand', tablet: '$brandDark'}} margin="$large" onClick$={() => openPortal ? openPortal("test2") : undefined}>Portal 2</Box>
-        <Button onClick$={ () => closeAllPortals ? closeAllPortals() : undefined}>Close All</Button>
+        locale route {lang} <Button class="btn-spin" onClick$={ () => openPortal("test1")}>Test Portal</Button>
+        <Box ref={buttonRef} as="button" color="$brandLight" bg={{mobile: '$brand', tablet: '$brandDark'}} margin="$large" onClick$={() => openPortal("test2")}>Portal 2</Box>
+        <Button onClick$={ () => closeAllPortals()}>Close All</Button>
       </Box>
       <h1>Users Data...</h1>
       <pre>{JSON.stringify(users?.value?.data[0]?.breed, null, 2)}</pre>

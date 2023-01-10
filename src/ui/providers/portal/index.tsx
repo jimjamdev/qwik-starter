@@ -8,6 +8,10 @@ import {
   $
 } from "@builder.io/qwik";
 
+export interface IPortal {
+
+}
+
 export interface IPortalContext {
   portals: Array<string>;
 }
