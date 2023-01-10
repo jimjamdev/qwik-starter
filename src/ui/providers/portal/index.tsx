@@ -8,7 +8,7 @@ import {
 } from "@builder.io/qwik";
 
 export interface IPortal {
-  portalKey?: string;
+  [key: string]: any;
 }
 
 export interface IPortalContext {
@@ -23,7 +23,7 @@ export const PortalContext = createContext("portal");
 export const PortalProvider = component$((props: any) => {
   // const { portalsList = {} } = props;
   console.log("***portalProps", props);
-  const activePortals = useStore<IPortalContext>({ value: { activePortals: [] },  });
+  const activePortals = useStore<IPortalContext>({ value: { activePortals: [{}] },  });
 
   /*const openPortal$ = ((portalKey: string) => {
     console.log("***openPortal", portalKey, 'from', portalsList);
