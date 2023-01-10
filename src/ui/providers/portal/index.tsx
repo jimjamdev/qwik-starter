@@ -12,22 +12,24 @@ export interface IPortal {
 }
 
 export interface IPortalContext {
-  value?: Array<{ activePortals: [] }>;
+  value?: {
+    activePortals?: IPortal[];
+  };
   openPortal?: (portal: IPortal) => void;
 }
 
 export const PortalContext = createContext("portal");
 
 export const PortalProvider = component$((props: any) => {
-  const { portalsList = {} } = props;
+  // const { portalsList = {} } = props;
   console.log("***portalProps", props);
-  const activePortals = useStore<IPortalContext>({ value: [],  });
+  const activePortals = useStore<IPortalContext>({ value: { activePortals: [] },  });
 
-  const openPortal$ = ((portalKey: string) => {
+  /*const openPortal$ = ((portalKey: string) => {
     console.log("***openPortal", portalKey, 'from', portalsList);
   });
-
-  useContextProvider(PortalContext, { activePortals, openPortal$ });
+*/
+  useContextProvider(PortalContext, { activePortals });
   return <Slot />;
 });
 
