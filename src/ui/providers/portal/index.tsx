@@ -29,11 +29,15 @@ export const usePortal = () => {
   return {
     portals: state.portals,
     openPortal: $((portalKey: string) => {
-      console.log("***usePortal-State", state.portals);
-      console.log("***usePortal-openPortal", portalKey);
       if(!state.portals.includes(portalKey)) {
         state.portals = [...state.portals, portalKey];
       }
+    }),
+    closePortal: $((portalKey: string) => {
+      state.portals = state.portals.filter((key) => key !== portalKey);
+    }),
+    closeAllPortals: $(() => {
+      state.portals = [];
     }),
   }
 };
