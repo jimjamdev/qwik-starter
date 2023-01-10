@@ -15,7 +15,7 @@ export default component$(() => {
   const { lang } = useLocale();
   const buttonRef = useSignal<Element>();
   // @ts-ignore
-  const { openPortal$ } = usePortal();
+  const { openPortal } = usePortal();
   const users = getUser.use();
   useClientEffect$(async () => {
     if(buttonRef.value) {
@@ -36,7 +36,7 @@ export default component$(() => {
     <>
       <div>
         {/* eslint-disable-next-line qwik/valid-lexical-scope */}
-        locale route {lang} <Button class="btn-spin" onClick$={() => openPortal$ ? openPortal$("test") : undefined}>Test</Button>
+        locale route {lang} <Button class="btn-spin" onClick$={() => openPortal ? openPortal("test") : undefined}>Test</Button>
         <Box ref={buttonRef} as="button" color="$brandLight" bg={{mobile: '$brand', tablet: '$brandDark'}} margin="$large">Box</Box>
       </div>
       <h1>Users Data...</h1>
