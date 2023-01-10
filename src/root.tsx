@@ -10,6 +10,7 @@ import { lightTheme } from "~/ui/theme/light.css";
 import "~/ui/theme/global.css";
 import { ThemeProvider, LocaleProvider } from "~/ui/providers";
 import { PortalProvider } from "~/ui/providers/portal";
+import { portalsList } from "~/components/portals/portalsList";
 
 export default component$(() => {
   const theme = useStore({
@@ -26,7 +27,7 @@ export default component$(() => {
       </head>
       <ThemeProvider theme={theme.value}>
         <LocaleProvider>
-          <PortalProvider>
+          <PortalProvider value={portalsList}>
             <body class={theme.value}>
               <button onClick$={switchTheme}>switch</button>
               <RouterOutlet />
