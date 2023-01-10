@@ -23,17 +23,22 @@ export const PortalContext = createContext("portal");
 export const PortalProvider = component$((props: any) => {
   // const { portalsList = {} } = props;
   console.log("***portalProps", props);
+  const portals = useStore(PortalContext);
 
-  const portals = useStore<IPortalContext>({
+  const openPortal$ = $((portalKey: string) => {
+    console.log("***openPortal", portalKey);
+    console.log("***portals", portals);
+    // portals.portals = [...portals.portals, portalKey];
+  });
+
+  const portalState = useStore<IPortalContext>({
     portals: ['testPortalKey'],
-    openPortal: $((portalKey: string) => {
-      return console.log("***openPortal", portalKey);
-    }),
+    openPortal: openPortal$
   }, {
     recursive: true,
   });
-  useContextProvider(PortalContext, portals);
+  useContextProvider(PortalContext, portalState);
   return <Slot />;
 });
 
-export const usePortal = () => useContext(PortalContext) as IPortalContext;
+export const usePortal = () => useContext(PortalContext);
