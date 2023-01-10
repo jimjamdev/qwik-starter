@@ -27,11 +27,12 @@ export const PortalProvider = component$(() => {
 export const usePortal = () => {
   const state = useContext(PortalContext) as IPortalContext;
   return {
+    portals: state.portals,
     openPortal$: $((portalKey: string) => {
       console.log("***usePortal-State", state.portals);
       console.log("***usePortal-openPortal", portalKey);
       state.portals = [...state.portals, portalKey];
-    })
+    }),
   }
 };
 
