@@ -8,35 +8,30 @@ import {
   $
 } from "@builder.io/qwik";
 
-export interface IPortal {
-  [key: string]: any;
-}
-
 export interface IPortalContext {
-  portals: string[];
-  openPortal?: (portalKey: string) => void;
-  openPortal$?: (portalKey: string) => void;
+  portals: Array<string>;
 }
 
 export const PortalContext = createContext("portal");
 
 export const PortalProvider = component$(() => {
 
-  const openPortal$ = $((portalKey: string) => {
-    console.log("***openPortal", portalKey);
-    // state.portals.push(portalKey);
-    //portal.portals.push(portalKey);
-  });
-
   const portalState = useStore<IPortalContext>({
     portals: ['testPortalKey'],
-    openPortal: openPortal$
-  }, {
-    recursive: true,
   });
 
   useContextProvider(PortalContext, portalState);
   return <Slot />;
 });
 
-export const usePortal = () => useContext(PortalContext);
+export const usePortal = () => {
+  const state = useContext(PortalContext) as IPortalContext;
+  return {
+    openPortal$: $((portalKey: string) => {
+      console.log("***usePortal-State", state.portals);
+      console.log("***usePortal-openPortal", portalKey);
+      state.portals = [...state.portals, portalKey];
+    })
+  }
+};
+
