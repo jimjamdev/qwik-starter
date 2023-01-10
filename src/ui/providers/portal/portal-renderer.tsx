@@ -3,8 +3,8 @@ import { usePortal } from "~/ui/providers/portal/index";
 // import { Box } from "~/ui/components/box";
 
 export const PortalRenderer = component$(() => {
-  const { value } = usePortal();
-  console.log("***portals", value);
+  const { value, openPortal } = usePortal();
+  console.log("***portals", value, openPortal);
   return <div>PORTALS: {JSON.stringify(value, null, 2)}</div>
   /*const { activePortals = [] } = portals;
   return (
