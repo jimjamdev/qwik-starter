@@ -12,7 +12,7 @@ export interface IPortal {
 }
 
 export interface IPortalContext {
-  value?: Array<IPortal>;
+  value?: Array<{ activePortals: any }>;
   openPortal?: (portal: IPortal) => void;
 }
 

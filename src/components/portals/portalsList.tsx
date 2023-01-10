@@ -1,5 +1,7 @@
 import { LoginPortal } from "~/components/portals/login";
 
-export const portalsList = {
+export const portals = {
   login: LoginPortal
 }
+
+export const portalsList = Object.keys(portals).map((key) => key);
