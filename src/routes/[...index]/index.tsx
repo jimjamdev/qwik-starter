@@ -36,7 +36,7 @@ export default component$(() => {
     <>
       <div>
         {/* eslint-disable-next-line qwik/valid-lexical-scope */}
-        locale route {lang} <Button class="btn-spin" onClick$={() => portal.openPortal$ ? portal.openPortal$("test") : undefined}>Test</Button>
+        locale route {lang} <Button class="btn-spin" onClick$={() => portal.openPortal$ ? portal.openPortal$("test") : undefined}>Test Portal</Button>
         <Box ref={buttonRef} as="button" color="$brandLight" bg={{mobile: '$brand', tablet: '$brandDark'}} margin="$large">Box</Box>
       </div>
       <h1>Users Data...</h1>
