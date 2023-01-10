@@ -5,6 +5,7 @@ export interface BoxProps extends Sprinkles {
   class?: string;
   as?: any;
   ref?: any;
+  onClick$?: () => void;
 }
 
 export const Box = component$((props: BoxProps) => {

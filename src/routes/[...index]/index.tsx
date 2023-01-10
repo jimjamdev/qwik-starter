@@ -23,7 +23,7 @@ export default component$(() => {
     }
     animate(
       "button.btn-spin",
-      { rotate: 90 },
+      { rotate: 10 },
       {
         duration: 0.5,
         easing: "ease-in-out",
@@ -36,11 +36,12 @@ export default component$(() => {
     <>
       <div>
         {/* eslint-disable-next-line qwik/valid-lexical-scope */}
-        locale route {lang} <Button class="btn-spin" onClick$={async() => await openPortal?.("test")}>Test Portal</Button>
-        <Box ref={buttonRef} as="button" color="$brandLight" bg={{mobile: '$brand', tablet: '$brandDark'}} margin="$large">Box</Box>
+        locale route {lang} <Button class="btn-spin" onClick$={ () => openPortal ? openPortal("test") : undefined}>Test Portal</Button>
+        {/* eslint-disable-next-line qwik/valid-lexical-scope */}
+        <Box ref={buttonRef} as="button" color="$brandLight" bg={{mobile: '$brand', tablet: '$brandDark'}} margin="$large" onClick$={() => openPortal ? openPortal("test2") : undefined}>Box</Box>
       </div>
       <h1>Users Data...</h1>
-      <pre>{JSON.stringify(users.value, null, 2)}</pre>
+      <pre>{JSON.stringify(users?.value?.data[0]?.breed, null, 2)}</pre>
       {/*<Resource
         value={users}
         onPending={() => <div style={{ background: 'orange', padding: '10px' }}>loading...</div>}

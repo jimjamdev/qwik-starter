@@ -6,7 +6,7 @@ export const DefaultLayoutCss = style({
     "sidebar main"
     `,
   gridTemplateColumns: "auto 1fr",
-  minHeight: "100vh",
+  minHeight: "100%",
 });
 
 export const DefaultLayoutSidebarCss = style({

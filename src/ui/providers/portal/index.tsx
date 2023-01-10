@@ -13,10 +13,9 @@ export interface IPortal {
 }
 
 export interface IPortalContext {
-  value?: {
-    activePortals?: IPortal;
-  };
+  portals: string[];
   openPortal?: (portalKey: string) => void;
+  openPortal$?: (portalKey: string) => void;
 }
 
 export const PortalContext = createContext("portal");
@@ -25,17 +24,15 @@ export const PortalProvider = component$((props: any) => {
   // const { portalsList = {} } = props;
   console.log("***portalProps", props);
 
-  /*const openPortal$ = (portalKey: IPortal) => {
-    console.log("***openPortal", portalKey);
-  };*/
-
-  const state = useStore<IPortalContext>({
-    value: { activePortals: ["somePortal"] },
-    openPortal: $((portalKey: string) => console.log("openPortal$", portalKey)),
+  const portals = useStore<IPortalContext>({
+    portals: ['testPortalKey'],
+    openPortal: $((portalKey: string) => {
+      return console.log("***openPortal", portalKey);
+    }),
   }, {
     recursive: true,
   });
-  useContextProvider(PortalContext, state);
+  useContextProvider(PortalContext, portals);
   return <Slot />;
 });
 
