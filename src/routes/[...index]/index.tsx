@@ -15,7 +15,7 @@ export default component$(() => {
   const { lang } = useLocale();
   const buttonRef = useSignal<Element>();
   // @ts-ignore
-  const { openPortal } = usePortal();
+  const { openPortal, closeAllPortals } = usePortal();
   const users = getUser.use();
   useClientEffect$(async () => {
     await openPortal("onLoad");
@@ -35,12 +35,11 @@ export default component$(() => {
   });
   return (
     <>
-      <div>
-        {/* eslint-disable-next-line qwik/valid-lexical-scope */}
+      <Box as="section">
         locale route {lang} <Button class="btn-spin" onClick$={ () => openPortal ? openPortal("test1") : undefined}>Test Portal</Button>
-        {/* eslint-disable-next-line qwik/valid-lexical-scope */}
-        <Box ref={buttonRef} as="button" color="$brandLight" bg={{mobile: '$brand', tablet: '$brandDark'}} margin="$large" onClick$={() => openPortal ? openPortal("test2") : undefined}>Box</Box>
-      </div>
+        <Box ref={buttonRef} as="button" color="$brandLight" bg={{mobile: '$brand', tablet: '$brandDark'}} margin="$large" onClick$={() => openPortal ? openPortal("test2") : undefined}>Portal 2</Box>
+        <Button onClick$={ () => closeAllPortals ? closeAllPortals() : undefined}>Close All</Button>
+      </Box>
       <h1>Users Data...</h1>
       <pre>{JSON.stringify(users?.value?.data[0]?.breed, null, 2)}</pre>
       {/*<Resource
