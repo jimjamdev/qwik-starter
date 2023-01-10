@@ -33,7 +33,7 @@ export const PortalProvider = component$((props: any) => {
     value: { activePortals: ["somePortal"] },
     openPortal: $((portalKey: string) => console.log("openPortal$", portalKey)),
   }, {
-    recursive: true
+    recursive: true,
   });
   useContextProvider(PortalContext, state);
   return <Slot />;
