@@ -16,7 +16,7 @@ export interface IPortalContext {
   value?: {
     activePortals?: IPortal;
   };
-  openPortal$?: (portal: IPortal) => void;
+  openPortal$?: (portalKey: string) => void;
 }
 
 export const PortalContext = createContext("portal");

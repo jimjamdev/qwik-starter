@@ -7,7 +7,7 @@ import { Button } from "~/ui/components/button";
 import { fetchUsers } from "~/api";
 import { useLocale } from "~/ui/providers";
 import { Box } from "~/ui/components/box";
-//import { usePortal } from "~/ui/providers/portal";
+import { usePortal } from "~/ui/providers/portal";
 
 export const getUser = loader$(async ({ query }) => fetchUsers({ page: query.get("page") || "1" }));
 
@@ -15,10 +15,9 @@ export default component$(() => {
   const { lang } = useLocale();
   const buttonRef = useSignal<Element>();
   // @ts-ignore
-  //const { openPortal$ } = usePortal();
+  const { openPortal$ } = usePortal();
   const users = getUser.use();
   useClientEffect$(async () => {
-    //openPortal$("login");
     if(buttonRef.value) {
       console.log('***buttonRef', buttonRef.value);
     }
@@ -36,7 +35,8 @@ export default component$(() => {
   return (
     <>
       <div>
-        locale route {lang} <Button class="btn-spin">Test</Button>
+        {/* eslint-disable-next-line qwik/valid-lexical-scope */}
+        locale route {lang} <Button class="btn-spin" onClick$={() => openPortal$ ? openPortal$("test") : undefined}>Test</Button>
         <Box ref={buttonRef} as="button" color="$brandLight" bg={{mobile: '$brand', tablet: '$brandDark'}} margin="$large">Box</Box>
       </div>
       <h1>Users Data...</h1>
