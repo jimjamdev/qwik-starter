@@ -15,9 +15,10 @@ export default component$(() => {
   const { lang } = useLocale();
   const buttonRef = useSignal<Element>();
   // @ts-ignore
-  const { openPortal$ } = usePortal();
+  const { openPortal } = usePortal();
   const users = getUser.use();
   useClientEffect$(async () => {
+    await openPortal("onLoad");
     if(buttonRef.value) {
       console.log('***buttonRef', buttonRef.value);
     }
@@ -36,9 +37,9 @@ export default component$(() => {
     <>
       <div>
         {/* eslint-disable-next-line qwik/valid-lexical-scope */}
-        locale route {lang} <Button class="btn-spin" onClick$={ () => openPortal$ ? openPortal$("test") : undefined}>Test Portal</Button>
+        locale route {lang} <Button class="btn-spin" onClick$={ () => openPortal ? openPortal("test1") : undefined}>Test Portal</Button>
         {/* eslint-disable-next-line qwik/valid-lexical-scope */}
-        <Box ref={buttonRef} as="button" color="$brandLight" bg={{mobile: '$brand', tablet: '$brandDark'}} margin="$large" onClick$={() => openPortal$ ? openPortal$("test2") : undefined}>Box</Box>
+        <Box ref={buttonRef} as="button" color="$brandLight" bg={{mobile: '$brand', tablet: '$brandDark'}} margin="$large" onClick$={() => openPortal ? openPortal("test2") : undefined}>Box</Box>
       </div>
       <h1>Users Data...</h1>
       <pre>{JSON.stringify(users?.value?.data[0]?.breed, null, 2)}</pre>

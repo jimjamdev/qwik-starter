@@ -17,7 +17,7 @@ export const PortalContext = createContext("portal");
 export const PortalProvider = component$(() => {
 
   const portalState = useStore<IPortalContext>({
-    portals: [],
+    portals: ['initialValue'],
   });
 
   useContextProvider(PortalContext, portalState);
@@ -26,12 +26,15 @@ export const PortalProvider = component$(() => {
 
 export const usePortal = () => {
   const state = useContext(PortalContext) as IPortalContext;
+  const portals = state.portals;
   return {
-    portals: state.portals,
-    openPortal$: $((portalKey: string) => {
-      console.log("***usePortal-State", state.portals);
+    portals,
+    openPortal: $((portalKey: string) => {
+      console.log("***usePortal-State", portals);
       console.log("***usePortal-openPortal", portalKey);
-      state.portals = [...state.portals, portalKey];
+      if(!portals.includes(portalKey)) {
+        state.portals = [...state.portals, portalKey];
+      }
     }),
   }
 };
