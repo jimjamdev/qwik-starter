@@ -14,9 +14,11 @@ export const getUser = loader$(async ({ query }) => fetchUsers({ page: query.get
 export default component$(() => {
   const { lang } = useLocale();
   const buttonRef = useSignal<Element>();
+  // @ts-ignore
   const { openPortal$ } = usePortal();
   const users = getUser.use();
   useClientEffect$(async () => {
+    openPortal$("login");
     if(buttonRef.value) {
       console.log('***buttonRef', buttonRef.value);
     }
@@ -34,7 +36,7 @@ export default component$(() => {
   return (
     <>
       <div>
-        locale route {lang} <Button class="btn-spin" onClick$={openPortal$ ? openPortal$("login") : undefined}>Test</Button>
+        locale route {lang} <Button class="btn-spin">Test</Button>
         <Box ref={buttonRef} as="button" color="$brandLight" bg={{mobile: '$brand', tablet: '$brandDark'}} margin="$large">Box</Box>
       </div>
       <h1>Users Data...</h1>
