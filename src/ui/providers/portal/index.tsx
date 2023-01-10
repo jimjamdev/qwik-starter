@@ -15,7 +15,7 @@ export interface IPortalContext {
 
 export const PortalContext = createContext('portal');
 
-export const PortalProvider = component$((props: IPortalContext) => {
+export const PortalProvider = component$((props: any) => {
   console.log('***portalProps', props);
   const activePortals = useStore<IPortalContext>({ value: [] });
   useContextProvider(PortalContext, activePortals);

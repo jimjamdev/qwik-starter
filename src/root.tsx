@@ -11,6 +11,7 @@ import "~/ui/theme/global.css";
 import { ThemeProvider, LocaleProvider } from "~/ui/providers";
 import { PortalProvider } from "~/ui/providers/portal";
 import { portalsList } from "~/components/portals/portalsList";
+import { PortalRenderer } from "~/ui/providers/portal/portal-renderer";
 
 export default component$(() => {
   const theme = useStore({
@@ -31,6 +32,7 @@ export default component$(() => {
             <body class={theme.value}>
               <button onClick$={switchTheme}>switch</button>
               <RouterOutlet />
+              <PortalRenderer />
               <ServiceWorkerRegister />
             </body>
           </PortalProvider>
