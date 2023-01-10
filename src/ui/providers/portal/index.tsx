@@ -26,13 +26,12 @@ export const PortalProvider = component$(() => {
 
 export const usePortal = () => {
   const state = useContext(PortalContext) as IPortalContext;
-  const portals = state.portals;
   return {
-    portals,
+    portals: state.portals,
     openPortal: $((portalKey: string) => {
-      console.log("***usePortal-State", portals);
+      console.log("***usePortal-State", state.portals);
       console.log("***usePortal-openPortal", portalKey);
-      if(!portals.includes(portalKey)) {
+      if(!state.portals.includes(portalKey)) {
         state.portals = [...state.portals, portalKey];
       }
     }),
