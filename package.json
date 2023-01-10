@@ -55,6 +55,7 @@
     "@vanilla-extract/sprinkles": "^1.5.1",
     "motion": "^10.15.3",
     "rainbow-sprinkles": "^0.15.1",
-    "swiper": "^8.4.5"
+    "swiper": "^8.4.5",
+    "undici": "^5.14.0"
   }
 }

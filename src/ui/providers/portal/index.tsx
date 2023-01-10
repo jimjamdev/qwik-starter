@@ -16,8 +16,14 @@ export interface IPortalContext {
 export const PortalContext = createContext('portal');
 
 export const PortalProvider = component$((props: any) => {
+  // const { portalsList = {} } = props;
   console.log('***portalProps', props);
   const activePortals = useStore<IPortalContext>({ value: [] });
+
+  /*const openPortal = ((portalKey: string) => {
+    activePortals.value = [...activePortals.value, portalsList[portalKey]];
+  });*/
+
   useContextProvider(PortalContext, activePortals);
   return <Slot />;
 });

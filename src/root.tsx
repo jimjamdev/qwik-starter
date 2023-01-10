@@ -28,7 +28,7 @@ export default component$(() => {
       </head>
       <ThemeProvider theme={theme.value}>
         <LocaleProvider>
-          <PortalProvider value={portalsList}>
+          <PortalProvider portalsList={portalsList}>
             <body class={theme.value}>
               <button onClick$={switchTheme}>switch</button>
               <RouterOutlet />
