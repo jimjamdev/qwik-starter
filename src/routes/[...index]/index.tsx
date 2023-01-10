@@ -14,7 +14,6 @@ export const getUser = loader$(async ({ query }) => fetchUsers({ page: query.get
 export default component$(() => {
   const { lang } = useLocale();
   const buttonRef = useSignal<Element>();
-  // @ts-ignore
   const { openPortal, closeAllPortals } = usePortal();
   const users = getUser.use();
   useClientEffect$(async () => {
