@@ -16,7 +16,7 @@ export interface IPortalContext {
   value?: {
     activePortals?: IPortal;
   };
-  openPortal?: (portalKey: string) => void;
+  openPortal$?: (portalKey: string) => void;
 }
 
 export const PortalContext = createContext("portal");
@@ -31,7 +31,7 @@ export const PortalProvider = component$((props: any) => {
 
   const store = useStore<IPortalContext>({
     value: { activePortals: ["somePortal"] },
-    openPortal: $((portalKey: string) => console.log("openPortal$", portalKey)),
+    openPortal$: $((portalKey: string) => console.log("openPortal$", portalKey)),
   }, {
     recursive: true
   });
