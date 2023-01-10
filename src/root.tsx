@@ -9,6 +9,7 @@ import { darkTheme } from "~/ui/theme/dark.css";
 import { lightTheme } from "~/ui/theme/light.css";
 import "~/ui/theme/global.css";
 import { ThemeProvider, LocaleProvider } from "~/ui/providers";
+import { PortalProvider } from "~/ui/providers/portal";
 
 export default component$(() => {
   const theme = useStore({
@@ -25,11 +26,13 @@ export default component$(() => {
       </head>
       <ThemeProvider theme={theme.value}>
         <LocaleProvider>
-          <body class={theme.value}>
-            <button onClick$={switchTheme}>switch</button>
-            <RouterOutlet />
-            <ServiceWorkerRegister />
-          </body>
+          <PortalProvider>
+            <body class={theme.value}>
+              <button onClick$={switchTheme}>switch</button>
+              <RouterOutlet />
+              <ServiceWorkerRegister />
+            </body>
+          </PortalProvider>
         </LocaleProvider>
       </ThemeProvider>
     </QwikCityProvider>
