@@ -17,7 +17,7 @@ export const PortalContext = createContext("portal");
 export const PortalProvider = component$(() => {
 
   const portalState = useStore<IPortalContext>({
-    portals: ['testPortalKey'],
+    portals: [],
   });
 
   useContextProvider(PortalContext, portalState);
