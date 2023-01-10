@@ -21,11 +21,11 @@ export interface IPortalContext {
 export const PortalContext = createContext("portal");
 
 export const PortalProvider = component$(() => {
-  const state = useStore(PortalContext);
 
   const openPortal$ = $((portalKey: string) => {
-    console.log("***openPortal", state, portalKey);
+    console.log("***openPortal", portalKey);
     // state.portals.push(portalKey);
+    //portal.portals.push(portalKey);
   });
 
   const portalState = useStore<IPortalContext>({
@@ -34,6 +34,7 @@ export const PortalProvider = component$(() => {
   }, {
     recursive: true,
   });
+
   useContextProvider(PortalContext, portalState);
   return <Slot />;
 });
