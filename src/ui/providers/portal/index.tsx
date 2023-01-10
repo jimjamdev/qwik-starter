@@ -5,6 +5,7 @@ import {
   Slot,
   useContext,
   useStore,
+  $
 } from "@builder.io/qwik";
 
 export interface IPortal {
@@ -15,6 +16,7 @@ export interface IPortalContext {
   value?: {
     activePortals?: IPortal;
   };
+  openPortal$?: (portal: IPortal) => void;
 }
 
 export const PortalContext = createContext("portal");
@@ -27,10 +29,13 @@ export const PortalProvider = component$((props: any) => {
     console.log("***openPortal", portalKey);
   };*/
 
-  const state = useStore<IPortalContext>({
+  const store = useStore<IPortalContext>({
     value: { activePortals: ["somePortal"] },
+    openPortal$: $(() => console.log("openPortal$")),
+  }, {
+    recursive: true
   });
-  useContextProvider(PortalContext, state);
+  useContextProvider(PortalContext, store);
   return <Slot />;
 });
 
