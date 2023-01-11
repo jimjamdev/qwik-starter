@@ -7,11 +7,11 @@ export interface Animate {
 }
 export const Animate = component$((props: Animate) => {
   const { duration = 0.5 } = props;
-  const el = useSignal<Element>();
+  const ref = useSignal<Element>();
   useClientEffect$( () => {
-   if (el.value) {
+   if (ref.value) {
      animate(
-       "el.value",
+       "el.value.className",
        { rotate: 10 },
        {
          duration: duration,
@@ -22,5 +22,5 @@ export const Animate = component$((props: Animate) => {
      );
    }
   });
-  return <span style={{ display: 'contents'}} ref={el}><Slot /></span>;
+  return <span ref={ref}><Slot /></span>;
 });
