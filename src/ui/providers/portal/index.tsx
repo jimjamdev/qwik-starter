@@ -19,9 +19,10 @@ export interface IPortalContext {
   portalKeys: Array<string>;
 }
 
+
 export const PortalContext = createContext("portal");
 
-export const PortalProvider = component$((props: { portalsList: any }) => {
+export const PortalProvider = component$((props: { portalsList: PortalsList }) => {
   const portalKeys = Object.keys(props.portalsList).map((key) => key);
 
   const portalState = useStore<IPortalContext>({
