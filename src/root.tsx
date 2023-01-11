@@ -32,7 +32,7 @@ export default component$(() => {
             <body class={theme.value}>
               <button onClick$={switchTheme}>switch</button>
               <RouterOutlet />
-              <PortalRenderer />
+              <PortalRenderer portalsList={portalsList} />
               <ServiceWorkerRegister />
             </body>
           </PortalProvider>

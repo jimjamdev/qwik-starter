@@ -1,10 +1,10 @@
 import { component$ } from "@builder.io/qwik";
 import { IPortal, usePortal } from "~/ui/providers/portal/index";
 import { Box } from "~/ui/components/box";
-import { portalsList } from "~/components/portals/portalsList";
 
-export const PortalRenderer = component$(() => {
+export const PortalRenderer = component$((props: { portalsList: any }) => {
   const state = usePortal();
+  const portalsList = props.portalsList;
   return (
     <>
       {/*<pre>{JSON.stringify(state, null, 2)}</pre>*/}
