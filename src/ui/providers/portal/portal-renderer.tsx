@@ -11,7 +11,7 @@ export const PortalRenderer = component$(() => {
       {state?.portals?.map((portal: IPortal) => {
         // @ts-ignore
         const PortalComponent =  portalsList[portal?.portalKey] ? portalsList[portal?.portalKey] : () => <></>;
-        return <Box bg="lightgray"><PortalComponent key={portal.portalKey} {...portal.props} /></Box>;
+        return <Box bg="lightgray" key={portal.portalKey}><PortalComponent key={portal.portalKey} {...portal.props} /></Box>;
       })}
     </>
   );
