@@ -36,7 +36,7 @@ export default component$(() => {
     <>
       <Box as="section">
         locale route {lang} <Button class="btn-spin" onClick$={ () => openPortal("test1", { 'some': 'props' })}>Test Portal</Button>
-        <Box ref={buttonRef} as="button" color="$brandLight" bg={{mobile: '$brand', tablet: '$brandDark'}} margin="$large" onClick$={() => openPortal("test2")}>Portal 2</Box>
+        <Box ref={buttonRef} as="button" color="$brandLight" bg={{mobile: '$brand', tablet: '$brandDark'}} margin="$large" onClick$={() => openPortal("test2", { 'date': new Date() })}>Portal 2</Box>
         <Button onClick$={ () => closeAllPortals()}>Close All</Button>
       </Box>
       <h1>Users Data...</h1>
