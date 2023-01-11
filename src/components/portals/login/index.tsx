@@ -9,8 +9,9 @@ export const LoginPortal = component$((props: ILoginPortal) => {
   return (
     <Overlay>
       <aside>
-        <button onClick$={() => portal.closePortal(props.portalKey)}>Close</button>
-        some portal key: <pre>{JSON.stringify(props, null, 2)}</pre>
+        <h1>{props.portalKey}</h1>
+        <p>blah</p>
+        <button onClick$={() => portal.closePortal(props.portalKey as any)}>Close</button>
       </aside>
     </Overlay>
   );
