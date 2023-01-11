@@ -37,7 +37,9 @@ export default component$(() => {
     <>
       <Box as="section">
         locale route {lang}{" "}
-        <Animate><Button>Test 0</Button></Animate>
+        <Animate>
+          <Button>Test 0</Button>
+        </Animate>
         <Button
           class="btn-spin"
           onClick$={() => openPortal("test1", { some: "props" })}
