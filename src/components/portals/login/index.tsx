@@ -9,7 +9,7 @@ export const LoginPortal = component$((props: ILoginPortal) => {
   const portal = usePortal();
   return (
     <Overlay>
-      <Box bg="white">
+      <Box bg="white" minWidth={{ mobile: '98%', tablet: '50%' }} minHeight={{ mobile: '99%', tablet: 'auto' }}>
         <h1>{props.portalKey}</h1>
         <p>blah</p>
         <button onClick$={() => portal.closePortal(props.portalKey as any)}>Close</button>

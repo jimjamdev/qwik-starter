@@ -24,6 +24,10 @@ const responsiveProperties = defineProperties({
     flexDirection: true,
     justifyContent: true,
     alignItems: true,
+    height: true,
+    minHeight: true,
+    width: true,
+    minWidth: true,
   },
   staticProperties: {
     // Build out utility classes that don't use CSS variables
