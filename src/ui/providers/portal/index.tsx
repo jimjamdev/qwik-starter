@@ -7,6 +7,7 @@ import {
   useStore,
   $,
 } from "@builder.io/qwik";
+import { PortalsList } from "~/components/portals/portalsList";
 
 export interface IPortal {
   portalKey: string;
@@ -37,7 +38,7 @@ export const usePortal = () => {
   return {
     portals: state.portals,
     portalKeys: state.portalKeys,
-    openPortal: $((portalKey: string, props?: any) => {
+    openPortal: $((portalKey: PortalsList, props?: any) => {
       if (!state.portalKeys.includes(portalKey))
         return console.error(
           `${String.fromCodePoint(
@@ -52,7 +53,7 @@ export const usePortal = () => {
         ];
       }
     }),
-    closePortal: $((portalKey: string) => {
+    closePortal: $((portalKey: PortalsList) => {
       if (!state.portalKeys.includes(portalKey))
         return console.error(
           `${String.fromCodePoint(

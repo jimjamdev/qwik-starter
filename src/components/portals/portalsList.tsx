@@ -5,3 +5,5 @@ export const portalsList = {
   test1: LoginPortal,
   test2: LoginPortal,
 };
+
+export type PortalsList = keyof typeof portalsList[keyof typeof portalsList];
