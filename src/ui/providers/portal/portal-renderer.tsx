@@ -6,13 +6,13 @@ import { portalsList } from "~/components/portals/portalsList";
 export const PortalRenderer = component$(() => {
   const state = usePortal();
   return (
-    <Box>
-      <pre>{JSON.stringify(state, null, 2)}</pre>
+    <>
+      {/*<pre>{JSON.stringify(state, null, 2)}</pre>*/}
       {state?.portals?.map((portal: IPortal) => {
         // @ts-ignore
         const PortalComponent =  portalsList[portal?.portalKey] ? portalsList[portal?.portalKey] : () => <></>;
-        return <PortalComponent key={portal.portalKey} {...portal.props} />;
+        return <Box bg="lightgray"><PortalComponent key={portal.portalKey} {...portal.props} /></Box>;
       })}
-    </Box>
+    </>
   );
 });
