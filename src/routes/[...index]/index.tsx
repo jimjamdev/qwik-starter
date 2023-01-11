@@ -63,8 +63,8 @@ export default component$(() => {
         </Box>
         <Button onClick$={() => closeAllPortals()}>Close All</Button>
       </Box>
-      <h1>Users Data...</h1>
-      <pre>{JSON.stringify(users?.value?.data[0]?.breed, null, 2)}</pre>
+      <h1>Test Data...</h1>
+      <pre>{JSON.stringify(users?.value?.data[0], null, 2)}</pre>
       {/*<Resource
         value={users}
         onPending={() => <div style={{ background: 'orange', padding: '10px' }}>loading...</div>}
