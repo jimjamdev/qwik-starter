@@ -6,6 +6,7 @@ import { fetchUsers } from "~/api";
 import { useLocale } from "~/ui/providers";
 import { Box } from "~/ui/components/box";
 import { usePortal } from "~/ui/providers/portal";
+import { Animate } from "~/ui/components/animate";
 
 export const getUser = loader$(async ({ query }) =>
   fetchUsers({ page: query.get("page") || "1" })
@@ -36,6 +37,7 @@ export default component$(() => {
     <>
       <Box as="section">
         locale route {lang}{" "}
+        <Animate><Button>Test 0</Button></Animate>
         <Button
           class="btn-spin"
           onClick$={() => openPortal("test1", { some: "props" })}
