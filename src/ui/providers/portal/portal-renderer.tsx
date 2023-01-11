@@ -10,8 +10,14 @@ export const PortalRenderer = component$((props: { portalsList: any }) => {
       {/*<pre>{JSON.stringify(state, null, 2)}</pre>*/}
       {state?.portals?.map((portal: IPortal) => {
         // @ts-ignore
-        const PortalComponent =  portalsList[portal?.portalKey] ? portalsList[portal?.portalKey] : () => <></>;
-        return <Box bg="lightgray" key={portal.portalKey}><PortalComponent key={portal.portalKey} {...portal.props} /></Box>;
+        const PortalComponent = portalsList[portal?.portalKey]
+          ? portalsList[portal?.portalKey]
+          : () => <></>;
+        return (
+          <Box bg="lightgray" key={portal.portalKey}>
+            <PortalComponent key={portal.portalKey} {...portal.props} />
+          </Box>
+        );
       })}
     </>
   );

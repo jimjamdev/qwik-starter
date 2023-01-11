@@ -4,6 +4,4 @@ export const portalsList = {
   login: LoginPortal,
   test1: LoginPortal,
   test2: LoginPortal,
-}
-
-
+};

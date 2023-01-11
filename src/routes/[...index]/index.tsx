@@ -1,15 +1,15 @@
 import { component$, useClientEffect$, useSignal } from "@builder.io/qwik";
 import { animate } from "motion";
-import {
-  DocumentHead, loader$,
-} from "@builder.io/qwik-city";
+import { DocumentHead, loader$ } from "@builder.io/qwik-city";
 import { Button } from "~/ui/components/button";
 import { fetchUsers } from "~/api";
 import { useLocale } from "~/ui/providers";
 import { Box } from "~/ui/components/box";
 import { usePortal } from "~/ui/providers/portal";
 
-export const getUser = loader$(async ({ query }) => fetchUsers({ page: query.get("page") || "1" }));
+export const getUser = loader$(async ({ query }) =>
+  fetchUsers({ page: query.get("page") || "1" })
+);
 
 export default component$(() => {
   const { lang } = useLocale();
@@ -17,9 +17,9 @@ export default component$(() => {
   const buttonRef = useSignal<Element>();
   const users = getUser.use();
   useClientEffect$(async () => {
-    await openPortal("login", { title: 'someTitle' });
-    if(buttonRef.value) {
-      console.log('***buttonRef', buttonRef.value);
+    await openPortal("login", { title: "someTitle" });
+    if (buttonRef.value) {
+      console.log("***buttonRef", buttonRef.value);
     }
     animate(
       "button.btn-spin",
@@ -28,17 +28,40 @@ export default component$(() => {
         duration: 0.5,
         easing: "ease-in-out",
         repeat: Infinity,
-        direction: "alternate"
+        direction: "alternate",
       }
-    )
+    );
   });
   return (
     <>
       <Box as="section">
-        locale route {lang} <Button class="btn-spin" onClick$={ () => openPortal("test1", { 'some': 'props' })}>Test Portal</Button>
-        <Box ref={buttonRef} as="button" color="$brandLight" bg={{mobile: '$brand', tablet: '$brandDark'}} margin="$large" onClick$={() => openPortal("test2", { 'date': new Date() })}>Portal 2</Box>
-        <Box as="button" margin="$large" color="$brandLight" bg="$brandDark" onClick$={ () => openPortal("test3", { 'some': 'props' })}>Portal that doesn't exist</Box>
-        <Button onClick$={ () => closeAllPortals()}>Close All</Button>
+        locale route {lang}{" "}
+        <Button
+          class="btn-spin"
+          onClick$={() => openPortal("test1", { some: "props" })}
+        >
+          Test Portal
+        </Button>
+        <Box
+          ref={buttonRef}
+          as="button"
+          color="$brandLight"
+          bg={{ mobile: "$brand", tablet: "$brandDark" }}
+          margin="$large"
+          onClick$={() => openPortal("test2", { date: new Date() })}
+        >
+          Portal 2
+        </Box>
+        <Box
+          as="button"
+          margin="$large"
+          color="$brandLight"
+          bg="$brandDark"
+          onClick$={() => openPortal("test3", { some: "props" })}
+        >
+          Portal that doesn't exist
+        </Box>
+        <Button onClick$={() => closeAllPortals()}>Close All</Button>
       </Box>
       <h1>Users Data...</h1>
       <pre>{JSON.stringify(users?.value?.data[0]?.breed, null, 2)}</pre>
@@ -62,6 +85,6 @@ export const head: DocumentHead = {
     {
       name: "description",
       content: "Casino App",
-    }
+    },
   ],
 };
