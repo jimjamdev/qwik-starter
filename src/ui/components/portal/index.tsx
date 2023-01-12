@@ -1,5 +1,9 @@
-
-import { component$, Slot, useClientEffect$, useSignal } from "@builder.io/qwik";
+import {
+  component$,
+  Slot,
+  useClientEffect$,
+  useSignal,
+} from "@builder.io/qwik";
 
 export interface IPortal {
   container?: HTMLElement;
