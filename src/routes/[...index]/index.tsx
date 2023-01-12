@@ -19,7 +19,7 @@ export default component$(() => {
   useClientEffect$(async () => {
     await openPortal("login", { title: "someTitle" });
     if (buttonRef.value) {
-      console.log("***buttonRef", buttonRef.value);
+      console.log("***buttonRef--", buttonRef.value);
     }
   });
   return (
