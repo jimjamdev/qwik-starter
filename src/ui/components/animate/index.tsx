@@ -1,4 +1,4 @@
-import { component$, Slot, useClientEffect$, Fragment, useSignal } from "@builder.io/qwik";
+import { component$, Slot, useClientEffect$, useSignal } from "@builder.io/qwik";
 import { animate } from "motion";
 
 export interface Animate {
@@ -23,5 +23,5 @@ export const Animate = component$((props: Animate) => {
      );
    }
   });
-  return <Fragment ref={ref}><Slot /></Fragment>;
+  return <span ref={ref}><Slot /></span>;
 });
