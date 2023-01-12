@@ -18,7 +18,13 @@ export interface Params {
 export const fetchUsers = async (params: Params): Promise<Users> => {
   console.log(params);
   const { limit = 5, page = 1 } = params || {};
-  const req = await fetch(`https://catfact.ninja/breeds?limit=${limit}&page=${page}`);
+  const req = await fetch(`https://catfact.ninja/breeds?limit=${limit}&page=${page}`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      'Bearer': 'Bearer 1234567890',
+    },
+  });
   return req.json()
 };
 
