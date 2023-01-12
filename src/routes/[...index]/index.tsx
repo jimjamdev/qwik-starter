@@ -1,5 +1,4 @@
 import { component$, useClientEffect$, useSignal } from "@builder.io/qwik";
-import { animate } from "motion";
 import { DocumentHead, loader$ } from "@builder.io/qwik-city";
 import { Button } from "~/ui/components/button";
 import { fetchUsers } from "~/api";
@@ -22,23 +21,13 @@ export default component$(() => {
     if (buttonRef.value) {
       console.log("***buttonRef", buttonRef.value);
     }
-    animate(
-      "button.btn-spin",
-      { rotate: 10 },
-      {
-        duration: 0.5,
-        easing: "ease-in-out",
-        repeat: Infinity,
-        direction: "alternate",
-      }
-    );
   });
   return (
     <>
       <Box as="section">
         locale route {lang}{" "}
         <Animate>
-          <Button>Test 0</Button>
+          <Button>Test Animation</Button>
         </Animate>
         <Button
           class="btn-spin"

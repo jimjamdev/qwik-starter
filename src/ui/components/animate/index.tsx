@@ -12,7 +12,7 @@ export const Animate = component$((props: Animate) => {
    if (ref.value) {
      console.log('***animateElement', ref.value?.children[0].className);
      animate(
-       `${ref.value?.children[0].tagName}`,
+       `${ref.value?.children[0].className}`,
        { rotate: 10 },
        {
          duration: duration,
