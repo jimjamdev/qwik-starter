@@ -1,4 +1,4 @@
-import { component$, Slot, useClientEffect$, useSignal } from "@builder.io/qwik";
+import { component$, Slot, useClientEffect$, Fragment, useSignal } from "@builder.io/qwik";
 import { animate } from "motion";
 
 export interface Animate {
@@ -10,9 +10,9 @@ export const Animate = component$((props: Animate) => {
   const ref = useSignal<Element>();
   useClientEffect$( () => {
    if (ref.value) {
-     console.log('***animateElement', ref.value?.children[0]?.tagName.toLowerCase());
+     console.log('***animateElement', ref.value?.children[0]?.tagName);
      animate(
-       `${ref.value?.children[0]?.tagName?.toLowerCase()}`,
+       `${ref.value?.children[0]?.tagName}`,
        { rotate: 10 },
        {
          duration: duration,
@@ -23,5 +23,5 @@ export const Animate = component$((props: Animate) => {
      );
    }
   });
-  return <span ref={ref}><Slot /></span>;
+  return <Fragment ref={ref}><Slot /></Fragment>;
 });

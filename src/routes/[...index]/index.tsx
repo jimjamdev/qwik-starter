@@ -1,4 +1,4 @@
-import { component$, useClientEffect$, useSignal } from "@builder.io/qwik";
+import { component$, Resource, useClientEffect$, useSignal } from "@builder.io/qwik";
 import { DocumentHead, loader$ } from "@builder.io/qwik-city";
 import { Button } from "~/ui/components/button";
 import { fetchUsers } from "~/api";
@@ -58,16 +58,16 @@ export default component$(() => {
       </Box>
       <h1>Test Data...</h1>
       <pre>{JSON.stringify(users?.value?.data[0], null, 2)}</pre>
-      {/*<Resource
+      <Resource
         value={users}
         onPending={() => <div style={{ background: 'orange', padding: '10px' }}>loading...</div>}
         onRejected={() => <div style={{ background: 'tomato', padding: '10px' }}>error</div>}
         onResolved={(users) => (
           <>
-            <pre>{JSON.stringify(users, null, 2)}</pre>
+            <pre>{JSON.stringify(users?.data[1], null, 2)}</pre>
           </>
         )}
-      />*/}
+      />
     </>
   );
 });
