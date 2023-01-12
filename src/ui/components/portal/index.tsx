@@ -1,8 +1,13 @@
 
 import { component$, Slot, useClientEffect$, useSignal } from "@builder.io/qwik";
 
-export const Portal = component$(() => {
+export interface IPortal {
+  container?: HTMLElement;
+}
+
+export const Portal = component$((props: IPortal) => {
   const ref = useSignal<any>();
+  const container = props.container || document.body;
 
   useClientEffect$(async () => {
     const mountNode = ref.value;
@@ -10,15 +15,15 @@ export const Portal = component$(() => {
       ref.value = document.createElement("div");
     }
 
-    document.body.appendChild(mountNode);
+    container.appendChild(mountNode);
 
     return () => {
-      document.body.removeChild(mountNode);
+      container.removeChild(mountNode);
     };
   });
 
   return (
-    <div class="portal" ref={ref}>
+    <div ref={ref}>
       <Slot />
     </div>
   );
