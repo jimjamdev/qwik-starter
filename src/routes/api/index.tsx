@@ -1,5 +1,5 @@
 import { component$ } from "@builder.io/qwik";
 
-export const Api = component$(() => {
+export default component$(() => {
   return <div>Api</div>;
 });

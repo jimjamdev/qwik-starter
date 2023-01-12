@@ -50,7 +50,7 @@ export default component$(() => {
           margin="$large"
           color="$brandLight"
           bg="$brandDark"
-          onClick$={() => openPortal("test3", { some: "props" })}
+          onClick$={() => openPortal("test3" as any, { some: "props" })}
         >
           Portal that doesn't exist
         </Box>
