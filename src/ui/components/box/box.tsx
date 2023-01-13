@@ -12,7 +12,7 @@ export const Box = component$((props: BoxProps) => {
   const { className, style, otherProps } = rainbowSprinkles(props);
   const Component = props.as || 'div';
   return (
-    <Component class={className} style={style} {...otherProps}>
+    <Component class={[className, props.class].join(' ')} style={style} {...otherProps}>
       <Slot />
     </Component>
   );
