@@ -8,9 +8,13 @@
   "scope": "/",
   "start_url": "/",
   "shortcuts": [
-    {"Home": "/"},
-    {"Create Listing": "/account/list"},
-    {"My Orders": "/account/orders"}
+    {
+      "name": "List Item",
+      "short_name": "List",
+      "description": "List an item",
+      "url": "/listing",
+      "icons": [{ "src": "/images/icon-192x192.png", "sizes": "192x192" }]
+    }
   ],
   "icons": [
     {
