@@ -1,3 +1,4 @@
+import "~/ui/theme/global.css";
 import { component$, useStore, $ } from "@builder.io/qwik";
 import {
   QwikCityProvider,
@@ -5,15 +6,16 @@ import {
   ServiceWorkerRegister,
 } from "@builder.io/qwik-city";
 import { RouterHead } from "./components/router-head/router-head";
-import { darkTheme } from "~/ui/theme/dark.css";
-import { lightTheme } from "~/ui/theme/light.css";
-import "~/ui/theme/global.css";
-import { ThemeProvider, LocaleProvider } from "~/ui/providers";
-import { PortalProvider } from "~/ui/providers/portal";
 import { portalsList } from "~/components/portals/portalsList";
 import { PortalRenderer } from "~/ui/providers/portal/portal-renderer";
 import { QwikPartytown } from "~/components/partytown/partytown";
-import { AuthProvider } from "~/ui/providers/auth";
+import {
+  AuthProvider,
+  LocaleProvider,
+  PortalProvider,
+  ThemeProvider,
+} from "~/ui/providers";
+import { darkTheme, lightTheme } from "~/ui/theme";
 
 export default component$(() => {
   const theme = useStore({

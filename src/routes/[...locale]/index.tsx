@@ -1,11 +1,13 @@
-import { component$, Resource, useClientEffect$, useSignal } from "@builder.io/qwik";
+import {
+  component$,
+  Resource,
+  useClientEffect$,
+  useSignal,
+} from "@builder.io/qwik";
 import { DocumentHead, loader$ } from "@builder.io/qwik-city";
-import { Button } from "~/ui/components/button";
 import { fetchUsers } from "~/api";
-import { useLocale } from "~/ui/providers";
-import { Box } from "~/ui/components/box";
-import { usePortal } from "~/ui/providers/portal";
-import { Animate } from "~/ui/components/animate";
+import { useLocale, usePortal } from "~/ui/providers";
+import { Animate, Box, Button } from "~/ui/components";
 
 export const getUser = loader$(async ({ query }) =>
   fetchUsers({ page: query.get("page") || "1" })
@@ -59,8 +61,14 @@ export default component$(() => {
       <pre>{JSON.stringify(users?.value?.data[0], null, 2)}</pre>
       <Resource
         value={users}
-        onPending={() => <div style={{ background: 'orange', padding: '10px' }}>loading...</div>}
-        onRejected={() => <div style={{ background: 'tomato', padding: '10px' }}>error</div>}
+        onPending={() => (
+          <div style={{ background: "orange", padding: "10px" }}>
+            loading...
+          </div>
+        )}
+        onRejected={() => (
+          <div style={{ background: "tomato", padding: "10px" }}>error</div>
+        )}
         onResolved={(users) => (
           <>
             <pre>{JSON.stringify(users?.data[1], null, 2)}</pre>
