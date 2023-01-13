@@ -1,5 +1,5 @@
 import { globalStyle } from '@vanilla-extract/css';
-import { theme } from "~/ui/theme/theme.css";
+import { theme } from "~/ui/theme";
 
 globalStyle('html, body', {
   margin: 0,
