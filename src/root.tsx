@@ -1,5 +1,5 @@
 import "~/ui/theme/global.css";
-import { component$, useStore, $ } from "@builder.io/qwik";
+import { component$ } from "@builder.io/qwik";
 import {
   QwikCityProvider,
   RouterOutlet,
@@ -13,17 +13,11 @@ import {
   AuthProvider,
   LocaleProvider,
   PortalProvider,
-  ThemeProvider,
+  ThemeProvider
 } from "~/ui/providers";
-import { darkTheme, lightTheme } from "~/ui/theme";
+import { themes } from "~/ui/theme/themeList";
 
 export default component$(() => {
-  const theme = useStore({
-    value: darkTheme,
-  });
-  const switchTheme = $(() => {
-    theme.value = theme.value === darkTheme ? lightTheme : darkTheme;
-  });
   return (
     <QwikCityProvider>
       <head>
@@ -39,12 +33,11 @@ export default component$(() => {
         />
         <RouterHead />
       </head>
-      <ThemeProvider theme={theme.value}>
+      <ThemeProvider themeList={themes}>
         <LocaleProvider>
           <AuthProvider>
             <PortalProvider portalsList={portalsList}>
-              <body class={theme.value}>
-                <button onClick$={switchTheme}>switch</button>
+              <body>
                 <RouterOutlet />
                 <PortalRenderer portalsList={portalsList} />
                 <ServiceWorkerRegister />

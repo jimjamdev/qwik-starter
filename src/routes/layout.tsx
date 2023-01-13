@@ -1,7 +1,11 @@
 import { component$, Slot } from "@builder.io/qwik";
+import { useTheme } from "~/ui/providers";
 
-export default component$(() => (
-  <>
-    <Slot />
-  </>
-));
+export default component$(() => {
+  const theme = useTheme();
+  return (
+    <div style={{ display: 'contents' }} class={theme.value}>
+      <Slot />
+    </div>
+  );
+});
