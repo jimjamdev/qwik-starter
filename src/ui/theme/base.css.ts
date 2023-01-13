@@ -3,6 +3,7 @@ export const baseTheme = {
     brandLight: "#f6d9ca",
     brand: "#781904",
     brandDark: "#2c0701",
+    body: '#fff',
   },
   font: {
     primary: "Arial, system-ui, sans-serif",

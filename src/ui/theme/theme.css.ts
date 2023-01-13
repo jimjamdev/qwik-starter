@@ -4,7 +4,8 @@ export const theme = createThemeContract({
   color: {
     brandLight: '',
     brand: '',
-    brandDark: ''
+    brandDark: '',
+    body: '',
   },
   font: {
     primary: '',

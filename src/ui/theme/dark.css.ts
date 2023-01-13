@@ -9,6 +9,7 @@ export const darkTheme = createTheme(theme, {
     brandLight: "#e5ecff",
     brand: "#043678",
     brandDark: "#010b2c",
+    body: "#2c2c2c",
   },
   font: {
     primary: "helvetica",
