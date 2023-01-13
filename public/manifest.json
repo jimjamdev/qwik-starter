@@ -13,7 +13,7 @@
       "short_name": "List",
       "description": "List an item",
       "url": "/listing",
-      "icons": [{ "src": "/images/icon-192x192.png", "sizes": "192x192" }]
+      "icons": [{ "src": "/images/icons/icon-192x192.png", "sizes": "192x192" }]
     }
   ],
   "icons": [
