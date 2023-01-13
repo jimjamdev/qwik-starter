@@ -1,11 +1,7 @@
 import { component$, Slot } from "@builder.io/qwik";
 import { overlayCss } from "~/ui/components/overlay/index.css";
 
-export interface Overlay {
-  ref?: Element;
-}
-
-export const Overlay = component$((props: Overlay) => {
+export const Overlay = component$(() => {
   /*useClientEffect$(async () => {
     const { body } = document;
     body.style.overflow = "hidden";
@@ -14,5 +10,5 @@ export const Overlay = component$((props: Overlay) => {
     };
   });*/
   // Need https://qwik.builder.io/tutorial/hooks/use-un-mount/ to remove hidden onUnMount
-  return <section class={overlayCss} ref={props.ref}><Slot /></section>;
+  return <section class={overlayCss}><Slot /></section>;
 });
