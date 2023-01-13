@@ -15,7 +15,7 @@ export default component$(() => {
 
       <Link class={linkStyle} href={`${path}listing`}>Listing</Link>
 
-      <button onClick$={() => theme.setTheme( theme.activeTheme === 'light' ? 'dark' : 'light' )}>switch</button>
+      <button onClick$={() => theme.setTheme( theme.activeTheme === 'light' ? 'dark' : 'light' )}>{ theme.activeTheme === 'light' ? 'light theme' : 'dark theme' }</button>
     </nav>
   );
 });

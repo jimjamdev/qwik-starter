@@ -38,10 +38,5 @@ export const useTheme = () => {
       state.theme = themes[theme];
       state.activeTheme = theme;
     }),
-    switchTheme: $(() => {
-      state.theme =
-        state.theme === themes["light"] ? themes["dark"] : themes["light"];
-      state.activeTheme = state.activeTheme === "light" ? "dark" : "light";
-    }),
   };
 };
