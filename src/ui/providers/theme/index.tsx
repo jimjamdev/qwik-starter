@@ -9,6 +9,7 @@ import { ThemeList, themes } from "~/ui/theme/themeList";
 
 export interface IThemeContext {
   value?: any;
+  activeTheme?: ThemeList;
 }
 
 export interface IThemeProvider {
@@ -18,8 +19,8 @@ export interface IThemeProvider {
 export const ThemeContext = createContext('theme');
 
 export const ThemeProvider = component$((props: IThemeProvider) => {
-  const activeTheme = useStore<IThemeContext>({ value: props.themeList['light'] });
-  useContextProvider(ThemeContext, activeTheme);
+  const theme = useStore<IThemeContext>({ value: props.themeList['light'], activeTheme: 'light' });
+  useContextProvider(ThemeContext, theme);
   return <Slot />;
 });
 
@@ -29,9 +30,11 @@ export const useTheme = () => {
     value: state.value,
     setTheme: $((theme: ThemeList) => {
       state.value = themes[theme];
+      state.activeTheme = theme;
     }),
     switchTheme: $(() => {
       state.value = state.value === themes['light'] ? themes['dark'] : themes['light'];
+      state.activeTheme = state.activeTheme === 'light' ? 'dark' : 'light';
     }),
   };
 }

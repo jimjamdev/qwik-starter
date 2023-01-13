@@ -19,7 +19,6 @@ export interface IPortalContext {
   portalKeys: Array<string>;
 }
 
-
 export const PortalContext = createContext("portal");
 
 export const PortalProvider = component$((props: { portalsList: any }) => {
@@ -62,9 +61,9 @@ export const usePortal = () => {
           )}  Portal key ${portalKey} not found, make sure to add it to the portalsList imported into PortalProvider`
         );
 
-      state.portals = state.portals.filter(
-        (portal) => portal.portalKey !== portalKey
-      );
+      state.portals = [
+        ...state.portals.filter((portal) => portal.portalKey !== portalKey),
+      ];
     }),
     closeAllPortals: $(() => {
       state.portals = [];

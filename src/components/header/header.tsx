@@ -9,6 +9,9 @@ export default component$(() => {
   const theme = useTheme();
   const path = `/${locale}/`;
 
+  // @ts-ignore
+  console.log('theme', theme.value, theme.activeTheme);
+
   return (
     <nav class={headerCss}>
       <Link class={linkStyle} href={`${path}`} aria-current="page">Home</Link>
