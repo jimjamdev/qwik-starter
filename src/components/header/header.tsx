@@ -10,7 +10,7 @@ export default component$(() => {
   const path = `/${locale}/`;
 
   // @ts-ignore
-  console.log('theme', theme.value, theme.activeTheme);
+  console.log('theme', theme.theme, theme.activeTheme);
 
   return (
     <nav class={headerCss}>
