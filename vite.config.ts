@@ -8,6 +8,7 @@ import { join } from "path";
 
 (String as any).prototype.toUppercase = String.prototype.toUpperCase;
 export default defineConfig(() => {
+  (String as any).prototype.toUppercase = String.prototype.toUpperCase;
   return {
     plugins: [
       qwikCity(),
