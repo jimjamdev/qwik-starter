@@ -1,12 +1,11 @@
 import { component$, useClientEffect$, useSignal, useStore } from "@builder.io/qwik";
 import { Link } from '@builder.io/qwik-city';
 import { getLocale } from '~/utils/routing/getLocale';
-import { config } from '~/config';
 import { headerCss, linkStyle } from "~/components/header/header.css";
 
 export default component$(() => {
   const locale = getLocale();
-  const path = locale === config.defaultLocale ? '/' : `/${locale}/`;
+  const path = `/${locale}/`;
   const ref = useSignal<Element>();
   const store = useStore({
     height: 0,
