@@ -10,7 +10,6 @@ export const Animate = component$((props: Animate) => {
   const ref = useSignal<Element>();
   useClientEffect$( () => {
    if (ref.value) {
-     console.log('***animateElement', ref.value?.children[0]?.tagName);
      animate(
        `${ref.value?.children[0]?.tagName}`,
        { rotate: 10 },

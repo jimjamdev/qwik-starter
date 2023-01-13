@@ -16,7 +16,6 @@ export interface Params {
 }
 //Test fetch
 export const fetchUsers = async (params: Params): Promise<Users> => {
-  console.log(params);
   const { limit = 5, page = 1 } = params || {};
   const req = await fetch(`https://catfact.ninja/breeds?limit=${limit}&page=${page}`, {
     method: 'GET',

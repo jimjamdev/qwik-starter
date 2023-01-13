@@ -16,7 +16,6 @@ export const LocaleContext = createContext('locale');
 
 export const LocaleProvider = component$(() => {
   const location = useLocation();
-  console.log('location', location);
   const value = getLocaleFromPath(location.pathname);
   const locale = useStore<ILocale>({ lang: value || 'en' });
   useContextProvider(LocaleContext, locale);
