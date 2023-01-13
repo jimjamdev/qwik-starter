@@ -1,9 +1,7 @@
 import { component$, Slot } from "@builder.io/qwik";
 import { DefaultLayout } from "~/ui/layouts/default";
+import Header from "~/components/header/header";
 
-export const Header = component$(() => {
-  return <div>Header</div>;
-});
 
 export const SideBar = component$(() => {
   return <div>Side</div>;

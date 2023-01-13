@@ -2,7 +2,7 @@ import { component$, useClientEffect$, useSignal, useStore } from "@builder.io/q
 import { Link } from '@builder.io/qwik-city';
 import { getLocale } from '~/utils/routing/getLocale';
 import { config } from '~/config';
-import { headerCss } from "~/components/header/header.css";
+import { headerCss, linkStyle } from "~/components/header/header.css";
 
 export default component$(() => {
   const locale = getLocale();
@@ -21,9 +21,9 @@ export default component$(() => {
 
   return (
     <nav class={headerCss} ref={ref}>
-      <Link href={`${path}`} aria-current="page">Home</Link>
+      <Link class={linkStyle} href={`${path}`} aria-current="page">Home</Link>
 
-      <Link href={`${path}listing`}>Listing</Link>
+      <Link class={linkStyle} href={`${path}listing`}>Listing</Link>
       {store.height}
     </nav>
   );
