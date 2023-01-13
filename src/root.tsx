@@ -22,7 +22,6 @@ export default component$(() => {
   const switchTheme = $(() => {
     theme.value = theme.value === darkTheme ? lightTheme : darkTheme;
   });
-  (String as any).prototype.toUppercase = String.prototype.toUpperCase;
   return (
     <QwikCityProvider>
       <head>
