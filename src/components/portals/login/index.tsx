@@ -13,8 +13,8 @@ export const LoginPortal = component$((props: ILoginPortal) => {
       <Overlay>
         <Box
           bg="white"
-          minWidth={{ mobile: "98%", tablet: "50%" }}
-          minHeight={{ mobile: "99%", tablet: "auto" }}
+          minWidth={{ mobile: "70%", tablet: "50%" }}
+          minHeight={{ mobile: "71%", tablet: "auto" }}
         >
           <h1>{props.portalKey}</h1>
           <p>blah</p>

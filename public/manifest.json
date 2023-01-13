@@ -1,12 +1,17 @@
 {
   "name": "Jim Jam",
   "short_name": "JimJam",
-  "theme_color": "#fff",
-  "background_color": "#fff",
+  "theme_color": "#1D1B54",
+  "background_color": "#1D1B54",
   "display": "standalone",
   "orientation": "portrait",
   "scope": "/",
   "start_url": "/",
+  "shortcuts": [
+    {"Home": "/"},
+    {"Create Listing": "/account/list"},
+    {"My Orders": "/account/orders"}
+  ],
   "icons": [
     {
       "src": "images/icons/icon-72x72.png",
