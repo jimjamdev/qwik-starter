@@ -13,6 +13,7 @@ import { PortalProvider } from "~/ui/providers/portal";
 import { portalsList } from "~/components/portals/portalsList";
 import { PortalRenderer } from "~/ui/providers/portal/portal-renderer";
 import { QwikPartytown } from "~/components/partytown/partytown";
+import { AuthProvider } from "~/ui/providers/auth";
 
 export default component$(() => {
   const theme = useStore({
@@ -29,7 +30,7 @@ export default component$(() => {
         <meta name="theme-color" content="#000000" />
         <link rel="manifest" href="/manifest.json" />
         <link rel="apple-touch-icon" href="/images/icon-192x192.png" />
-        <QwikPartytown forward={['dataLayer.push']} />
+        <QwikPartytown forward={["dataLayer.push"]} />
         <script
           async
           type="text/partytown"
@@ -39,14 +40,16 @@ export default component$(() => {
       </head>
       <ThemeProvider theme={theme.value}>
         <LocaleProvider>
-          <PortalProvider portalsList={portalsList}>
-            <body class={theme.value}>
-              <button onClick$={switchTheme}>switch</button>
-              <RouterOutlet />
-              <PortalRenderer portalsList={portalsList} />
-              <ServiceWorkerRegister />
-            </body>
-          </PortalProvider>
+          <AuthProvider>
+            <PortalProvider portalsList={portalsList}>
+              <body class={theme.value}>
+                <button onClick$={switchTheme}>switch</button>
+                <RouterOutlet />
+                <PortalRenderer portalsList={portalsList} />
+                <ServiceWorkerRegister />
+              </body>
+            </PortalProvider>
+          </AuthProvider>
         </LocaleProvider>
       </ThemeProvider>
     </QwikCityProvider>
