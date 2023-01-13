@@ -9,16 +9,13 @@ export default component$(() => {
   const theme = useTheme();
   const path = `/${locale}/`;
 
-  // @ts-ignore
-  console.log('theme', theme.theme, theme.activeTheme);
-
   return (
     <nav class={headerCss}>
       <Link class={linkStyle} href={`${path}`} aria-current="page">Home</Link>
 
       <Link class={linkStyle} href={`${path}listing`}>Listing</Link>
 
-      <button onClick$={() => theme.switchTheme()}>switch</button>
+      <button onClick$={() => theme.setTheme( theme.activeTheme === 'light' ? 'dark' : 'light' )}>switch</button>
     </nav>
   );
 });

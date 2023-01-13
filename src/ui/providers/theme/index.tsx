@@ -33,6 +33,7 @@ export const useTheme = () => {
   const state = useContext(ThemeContext) as IThemeContext;
   return {
     theme: state.theme,
+    activeTheme: state.activeTheme,
     setTheme: $((theme: ThemeList) => {
       state.theme = themes[theme];
       state.activeTheme = theme;
