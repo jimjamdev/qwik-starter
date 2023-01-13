@@ -12,6 +12,7 @@ import { ThemeProvider, LocaleProvider } from "~/ui/providers";
 import { PortalProvider } from "~/ui/providers/portal";
 import { portalsList } from "~/components/portals/portalsList";
 import { PortalRenderer } from "~/ui/providers/portal/portal-renderer";
+import { QwikPartytown } from "~/components/partytown/partytown";
 
 export default component$(() => {
   const theme = useStore({
@@ -25,6 +26,12 @@ export default component$(() => {
     <QwikCityProvider>
       <head>
         <meta charSet="utf-8" />
+        <QwikPartytown forward={['dataLayer.push']} />
+        <script
+          async
+          type="text/partytown"
+          src="https://www.googletagmanager.com/gtag/js?id=G-PDJMFXEJ6G"
+        />
         <RouterHead />
       </head>
       <ThemeProvider theme={theme.value}>
