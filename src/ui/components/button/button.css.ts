@@ -14,5 +14,28 @@ export const buttonCss = recipe({
     ":hover": {
       backgroundColor: theme.color.brandDark,
     },
-  }
+  },
+  variants: {
+    color: {
+      primary: {
+        color: 'white',
+        backgroundColor: theme.color.brand,
+      },
+      secondary: {
+        backgroundColor: theme.color.brandLight,
+        color: 'black',
+      },
+    },
+    size: {
+      small: {
+        padding: "5px 10px",
+      },
+      medium: {
+        padding: "10px 20px",
+      },
+      large: {
+        padding: "15px 30px",
+      }
+    },
+  },
 })
