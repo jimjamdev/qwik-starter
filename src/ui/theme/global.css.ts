@@ -12,6 +12,6 @@ globalStyle('body', {
   background: theme.color.body,
 })
 
-globalStyle('*, *:after, *:before', {
+/*globalStyle('*, *:after, *:before', {
   boxSizing: 'border-box'
-});
+});*/
