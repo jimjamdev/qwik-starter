@@ -24,7 +24,7 @@ export default component$(() => {
         <meta charSet="utf-8" />
         <meta name="theme-color" content="#000000" />
         <link rel="manifest" href="/manifest.json" />
-        <link rel="apple-touch-icon" href="/images/icon-192x192.png" />
+        <link rel="apple-touch-icon" href="/images/icons/icon-192x192.png" />
         <QwikPartytown forward={["dataLayer.push"]} />
         <script
           async
