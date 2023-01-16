@@ -31,7 +31,7 @@ export default component$(() => {
           <Button>Test Animation</Button>
         </Animate>
         <Button
-          color="secondary"
+          color="primary"
           size="large"
           class="btn-spin"
           onClick$={() => openPortal("test1", { some: "props" })}

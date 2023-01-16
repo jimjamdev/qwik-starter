@@ -3,7 +3,7 @@ import { buttonCss } from "~/ui/components/button/button.css";
 import { Box, BoxProps } from "~/ui/components";
 import { RecipeVariants } from "@vanilla-extract/recipes";
 
-type ButtonProps = RecipeVariants<typeof buttonCss> & BoxProps;
+type ButtonProps = BoxProps & RecipeVariants<typeof buttonCss>;
 
 export const Button = component$((props: ButtonProps) => {
 
