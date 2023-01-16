@@ -4,10 +4,12 @@ import { qwikCity } from "@builder.io/qwik-city/vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 import { partytownVite } from "@builder.io/partytown/utils";
 import { join } from "path";
+import { imagetools } from 'vite-imagetools'
 import { vanillaExtractPlugin } from "styled-vanilla-extract/vite";
 export default defineConfig(() => {
   return {
     plugins: [
+      imagetools(),
       qwikCity(),
       qwikVite(),
       tsconfigPaths(),
