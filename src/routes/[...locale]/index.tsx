@@ -62,7 +62,7 @@ export default component$(() => {
       </Box>
       <h1>Test Data...</h1>
       <pre>{JSON.stringify(users?.value?.data[0], null, 2)}</pre>
-      <img src="/images/image.jpg?w=400&h=300&webp" alt="some image" />
+      <img src="/images/image.jpg?w=400&h=300&webp" alt="some image" style={{ width: '200px' }} />
       <Resource
         value={users}
         onPending={() => (
