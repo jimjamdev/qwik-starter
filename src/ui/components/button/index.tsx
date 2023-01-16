@@ -1,8 +1,8 @@
 import { component$, JSXChildren, Slot } from "@builder.io/qwik";
-import { buttonCss } from "~/ui/components/button/button.css";
-import { Box } from "~/ui/components";
+import { buttonCss, ButtonRecipeProps } from "~/ui/components/button/button.css";
+import { Box, BoxProps } from "~/ui/components";
 
-export interface ButtonProps {
+export interface ButtonProps extends ButtonRecipeProps, BoxProps {
   class?: string;
   children?: JSXChildren;
   onClick$?: () => void;
