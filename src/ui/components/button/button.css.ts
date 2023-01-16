@@ -39,5 +39,3 @@ export const buttonCss = recipe({
     },
   },
 })
-
-export type ButtonRecipeProps = typeof buttonCss;

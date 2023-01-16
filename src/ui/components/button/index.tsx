@@ -1,14 +1,9 @@
-import { component$, JSXChildren, Slot } from "@builder.io/qwik";
-import { buttonCss, ButtonRecipeProps } from "~/ui/components/button/button.css";
+import { component$, Slot } from "@builder.io/qwik";
+import { buttonCss } from "~/ui/components/button/button.css";
 import { Box, BoxProps } from "~/ui/components";
+import { RecipeVariants } from "@vanilla-extract/recipes";
 
-export interface ButtonProps extends ButtonRecipeProps, BoxProps {
-  class?: string;
-  children?: JSXChildren;
-  onClick$?: () => void;
-  color?: 'primary' | 'secondary';
-  size?: "small" | "medium" | "large";
-}
+type ButtonProps = RecipeVariants<typeof buttonCss> & BoxProps;
 
 export const Button = component$((props: ButtonProps) => {
 
