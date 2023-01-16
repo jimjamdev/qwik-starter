@@ -7,5 +7,5 @@ type ButtonProps = BoxProps & RecipeVariants<typeof buttonCss>;
 
 export const Button = component$((props: ButtonProps) => {
 
-  return <Box as="button" marginTop="$large" {...props} class={[buttonCss({ color: props.color, size: props.size }), props.class].join(' ')}><Slot /></Box>;
+  return <Box as="button" {...props} class={[buttonCss({ color: props.color, size: props.size }), props.class].join(' ')}><Slot /></Box>;
 });

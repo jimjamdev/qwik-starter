@@ -31,6 +31,7 @@ export default component$(() => {
           <Button>Test Animation</Button>
         </Animate>
         <Button
+          marginTop={{ mobile: '$1', tablet: '$2' }}
           color="primary"
           size="large"
           class="btn-spin"
