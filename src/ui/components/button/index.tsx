@@ -6,6 +6,7 @@ import { RecipeVariants } from "@vanilla-extract/recipes";
 type ButtonProps = BoxProps & RecipeVariants<typeof buttonCss>;
 
 export const Button = component$((props: ButtonProps) => {
+  console.log('***props--', props);
 
   return <Box as="button" {...props} class={[buttonCss({ color: props.color, size: props.size }), props.class].join(' ')}><Slot /></Box>;
 });

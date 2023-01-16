@@ -31,7 +31,7 @@ const responsiveProperties = defineProperties({
   },
   staticProperties: {
     // Build out utility classes that don't use CSS variables
-    display: ['block', 'flex', 'inline-block', 'inline-flex'],
+    // display: ['block', 'flex', 'inline-block', 'inline-flex'],
   },
   shorthands: {
     bg: ['backgroundColor'],
