@@ -9,10 +9,10 @@ import { vanillaExtractPlugin } from "styled-vanilla-extract/vite";
 export default defineConfig(() => {
   return {
     plugins: [
-      imagetools(),
       qwikCity(),
       qwikVite(),
       tsconfigPaths(),
+      imagetools(),
       vanillaExtractPlugin(),
       partytownVite({ dest: join(__dirname, "public", "~partytown") }),
     ],
