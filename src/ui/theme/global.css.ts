@@ -5,6 +5,7 @@ globalStyle('html, body', {
   margin: 0,
   padding: 0,
   overflowX: 'hidden',
+  background: theme.color.body,
 });
 
 globalStyle('body', {
