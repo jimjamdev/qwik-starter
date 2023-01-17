@@ -9,6 +9,8 @@ import { fetchUsers } from "~/api";
 import { useLocale, usePortal } from "~/ui/providers";
 import { Animate, Box, Button } from "~/ui/components";
 
+import TestImage from '/images/image.jpg';
+
 export const getUser = loader$(async ({ query }) =>
   fetchUsers({ page: query.get("page") || "1" })
 );
@@ -63,6 +65,8 @@ export default component$(() => {
       <h1>Test Data...</h1>
       <pre>{JSON.stringify(users?.value?.data[0], null, 2)}</pre>
       <img src="/images/image.jpg?w=400&h=300&webp" alt="some image" style={{ width: '200px' }} />
+      <h2>Imported</h2>
+      <img src={TestImage} alt="some image" style={{ width: '200px' }} />
       <Resource
         value={users}
         onPending={() => (
