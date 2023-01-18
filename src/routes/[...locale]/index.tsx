@@ -62,7 +62,7 @@ export default component$(() => {
       </Box>
       <h1>Test Data...</h1>
       <pre>{JSON.stringify(users?.value?.data[0], null, 2)}</pre>
-      <img src="/images/image.webp?w=400&h=300&webp" alt="some image" style={{ width: '200px' }} />
+      <img src="/images/image.webp?w=400&h=300&webp" alt="some image" style={{ width: '200px', aspectRatio: '3:2' }} />
       <h2>Imported</h2>
       <Resource
         value={users}
