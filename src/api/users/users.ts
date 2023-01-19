@@ -24,7 +24,7 @@ export const fetcher = async (
     ...options,
     headers: {
       "Content-Type": "application/json ", // set the header bearer
-      "Bearer ": "Bearer  1234567890", // set the header bearer
+      "Bearer": "Bearer  1234567890", // set the header bearer
     },
   }); // include try cache
   if (!res.ok) {
