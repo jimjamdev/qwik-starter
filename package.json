@@ -58,6 +58,7 @@
     "@vanilla-extract/recipes": "^0.3.0",
     "@vanilla-extract/sprinkles": "^1.5.1",
     "@vanilla-extract/vite-plugin": "^3.7.0",
+    "clsx": "^1.2.1",
     "framer-motion": "^8.5.0",
     "motion": "^10.15.5",
     "rainbow-sprinkles": "^0.15.1",
