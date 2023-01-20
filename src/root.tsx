@@ -1,4 +1,5 @@
 import "~/ui/theme/global.css";
+import "~/ui/style/main.css";
 import { component$ } from "@builder.io/qwik";
 import {
   QwikCityProvider,

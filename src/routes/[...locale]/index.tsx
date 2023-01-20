@@ -30,6 +30,7 @@ export default component$(() => {
         <Animate>
           <Button>Test Animation</Button>
         </Animate>
+        <div class="flex">test tailwind</div>
         <Button
           marginTop={{ mobile: '$1', tablet: '$2' }}
           color="primary"
