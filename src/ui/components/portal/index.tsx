@@ -13,7 +13,7 @@ export const Portal = component$((props: IPortal) => {
   const ref = useSignal<any>();
   const container = props.container || document.body;
 
-  useTask$(async () => {
+  useTask$( () => {
     const mountNode = ref.value;
     if (!mountNode) {
       ref.value = document.createElement("div");
