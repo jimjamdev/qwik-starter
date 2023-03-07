@@ -1,7 +1,7 @@
 import {
   component$,
   useContextProvider,
-  createContext,
+  createContextId,
   Slot,
   useContext,
   useStore,
@@ -19,7 +19,7 @@ export interface IPortalContext {
   portalKeys: Array<string>;
 }
 
-export const PortalContext = createContext("portal");
+export const PortalContext = createContextId("portal");
 
 export const PortalProvider = component$((props: { portalsList: any }) => {
   const portalKeys = Object.keys(props?.portalsList)?.map((key) => key);

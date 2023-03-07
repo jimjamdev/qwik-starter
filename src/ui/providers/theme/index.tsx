@@ -2,7 +2,7 @@ import {
   $,
   component$,
   useContextProvider,
-  createContext,
+  createContextId,
   Slot,
   useContext,
   useStore,
@@ -19,7 +19,7 @@ export interface IThemeProvider {
   themeList?: any;
 }
 
-export const ThemeContext = createContext("theme");
+export const ThemeContext = createContextId("theme");
 
 export const ThemeProvider = component$((props: IThemeProvider) => {
   const themeKeys = Object.keys(props.themeList).map((key) => key);

@@ -2,7 +2,7 @@ import {
   component$,
   useStore,
   useContextProvider,
-  createContext,
+  createContextId,
   Slot, useContext
 } from "@builder.io/qwik";
 import { useLocation } from '@builder.io/qwik-city';
@@ -12,7 +12,7 @@ export interface ILocale {
   lang?: string;
 }
 
-export const LocaleContext = createContext('locale');
+export const LocaleContext = createContextId('locale');
 
 export const LocaleProvider = component$(() => {
   const location = useLocation();
