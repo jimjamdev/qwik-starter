@@ -1,7 +1,7 @@
 import {
   component$,
   Slot,
-  useClientEffect$,
+  useTask$,
   useSignal,
 } from "@builder.io/qwik";
 
@@ -13,7 +13,7 @@ export const Portal = component$((props: IPortal) => {
   const ref = useSignal<any>();
   const container = props.container || document.body;
 
-  useClientEffect$(async () => {
+  useTask$(async () => {
     const mountNode = ref.value;
     if (!mountNode) {
       ref.value = document.createElement("div");
