@@ -9,7 +9,7 @@ import { fetchUsers } from "~/api";
 import { useLocale, usePortal } from "~/ui/providers";
 import { Animate, Box, Button } from "~/ui/components";
 
-export const getUser = loader$(async ({ query }) =>
+export const useGetUser = loader$(async ({ query }) =>
   fetchUsers({ page: query.get("page") || "1" })
 );
 
@@ -17,7 +17,7 @@ export default component$(() => {
   const { lang } = useLocale();
   const { openPortal, closeAllPortals } = usePortal();
   const buttonRef = useSignal<Element>();
-  const users = getUser.use();
+  const users = useGetUser();
   useClientEffect$(async () => {
     if (buttonRef.value) {
       console.log("***buttonRef--", buttonRef.value);
